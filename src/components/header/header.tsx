@@ -13,16 +13,16 @@ const Header: React.FC<Props> = (props) => {
                 <img src={logo} alt="logo" />
             </div>
             <nav className={styles.pages}>
-                <NavLink to="/"className={({ isActive }) => isActive ? styles.activePage : styles.page}>
+                <NavLink to="/" className={({ isActive }) => isActive ? styles.activePage : styles.page}>
                     Home
                 </NavLink>
-                <NavLink to="/labs"className={({ isActive }) => isActive ? styles.activePage : styles.page}>
+                <NavLink to="/labs" className={({ isActive }) => isActive ? styles.activePage : styles.page}>
                     Labs
                 </NavLink>
-                <NavLink to="/login"className={({ isActive }) => isActive ? styles.activePage : styles.page}>
+                <NavLink to="/login" className={({ isActive }) => isActive ? styles.activePage : styles.page}>
                     Login
                 </NavLink>
-                <NavLink to="/signup"className={({ isActive }) => isActive ? styles.activePage : styles.page}>
+                <NavLink to="/signup" className={({ isActive }) => isActive ? styles.activePage : styles.page}>
                     Sign up
                 </NavLink>
             </nav>
