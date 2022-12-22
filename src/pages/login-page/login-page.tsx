@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './login-page.module.scss';
-import logo from './images/logo.svg';
-import { AuthGreeting, AuthTabs } from '../../components/auth';
+import { AuthGreeting, AuthNetworks, AuthTabs } from '../../components/auth';
+import { useLocation } from 'react-router-dom';
+import LoginPersonal from '../../components/auth/login-personal/login-personal';
 
 interface Props {
 }
 
 const LoginPage: React.FC<Props> = (props) => {
+    const location = useLocation();
+    const loginPersonalFields =  location.pathname === '/login' && location.hash === '#personal';
+
     return <div className={styles.loginPage}>
         <AuthGreeting title='Welcome back!' subtitle='Login from below' />
-        <AuthTabs />
+        <AuthTabs leftTab='Personal' rightTab='Lab' />
+        {
+          loginPersonalFields  && <LoginPersonal />
+        }
+        <AuthNetworks />
     </div>
 }
 

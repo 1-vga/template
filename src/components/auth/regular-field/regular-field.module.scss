@@ -1,0 +1,36 @@
+.regularField {
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.title {
+    color: var(--titleText);
+    font-weight: 700;
+    font-size: 14.4px;
+    line-height: 116%;
+    margin-bottom: 8px;
+}
+
+.inputContainer {
+    width: 100%;
+    padding: 10px 16px;
+    background: var(--bg-light);
+    border-radius: 4px;
+
+    & input, input::placeholder {
+        width: 100%;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 147%;
+        color: var(--simpleText);
+    }
+
+    &.errored {
+        border: 1px solid var(--error);
+    }
+}
+
+.errorText {
+    font-size: 14px;
+    color: var(--error);
+}

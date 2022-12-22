@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './signup-page.module.scss';
-import { AuthGreeting, AuthTabs } from '../../components/auth';
+import { AuthGreeting, AuthNetworks, AuthTabs } from '../../components/auth';
 
 interface Props {
 }
@@ -8,7 +8,8 @@ interface Props {
 const SignUpPage: React.FC<Props> = (props) => {
     return <div className={styles.signUpPage}>
         <AuthGreeting title='Create your account' subtitle='It’s free and easy' />
-        <AuthTabs />
+        <AuthTabs leftTab='Personal' rightTab='Institution' />
+        <AuthNetworks />
     </div>
 }
 

@@ -7,7 +7,7 @@ interface Props {
     subtitle: string;
 }
 
-const AuthGreeting: React.FC<Props> = ({title, subtitle}) => {
+const AuthGreeting: React.FC<Props> = ({ title, subtitle }) => {
     return <div className={styles.authGreeting}>
         <div className={styles.imageContainer}>
             <img src={emoji} alt="emoji" />

@@ -1,3 +1,32 @@
 .authTabs {
     width: 100%;
+    max-width: 283px;
+    border: 1px solid #EBEFF4;
+    background: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 22px;
+    margin: 0 auto;
+    cursor: pointer;
+    margin-bottom: 56px;
+}
+
+.tab {
+    width: 50%;
+    color: #737373;
+    padding: 14px 0;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14.4px;
+    line-height: 116%;
+    text-align: center;
+
+    &.active {
+        background: var(--primary);
+        color: #FFFFFF;
+    }
 }
