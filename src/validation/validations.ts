@@ -56,4 +56,36 @@ export const loginLabsValidation = {
     passwordValidator('Minimum eight characters, at least one letter and one number'),
     noSpecialSymbolsAloneValidator("Invalid data"),
   ]
+};
+
+export const signupPersonalValidation = {
+  first_name: [
+    requiredValidator('The field is required'),
+    nameLastNameValidator('Invalid first name'),
+  ],
+  last_name: [
+    requiredValidator('The field is required'),
+    nameLastNameValidator('Invalid last name'),
+  ],
+  password: [
+    requiredValidator('The field is required'),
+    passwordValidator('Minimum eight characters, at least one letter and one number'),
+    noSpecialSymbolsAloneValidator("Invalid data"),
+  ],
+  phone_or_email:  [
+    requiredValidator('The field is required'),
+    emailAndPhoneValidator('Email or phone is invalid'),
+  ],
+  country: [
+    requiredValidator('The field is required'),
+    noSpecialSymbolsAloneValidator("Invalid data"),
+  ],
+  city: [
+    requiredValidator('The field is required'),
+    noSpecialSymbolsAloneValidator("Invalid data"),
+  ],
+  address: [
+    requiredValidator('The field is required'),
+    noSpecialSymbolsAloneValidator("Invalid data"),
+  ]
 }
