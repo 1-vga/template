@@ -7,7 +7,7 @@ import { phone_or_email, password, loginPersonalFields, fieldsValidation } from 
 interface Props {
 }
 
-const LoginPersonal: React.FC<Props> = (props) => {
+const SignupPersonal: React.FC<Props> = (props) => {
     const [fields, setFields] = useState<Fields>({ phone_or_email, password });
 
     const handleFieldsChange = (e: React.ChangeEvent<{ name: string | undefined; value: string; }>, name: FieldName) => {
@@ -102,4 +102,4 @@ const LoginPersonal: React.FC<Props> = (props) => {
     </form>
 }
 
-export default LoginPersonal;
+export default SignupPersonal;
