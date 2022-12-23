@@ -1,4 +1,11 @@
-export type FieldName = "phone_or_email" | "password";
+export type FieldName = "name" | 
+"city" |
+"address" |
+"working_days_and_hours" |
+"telephone_number" |
+"website" |
+"email" |
+"password";
 
 export interface StateField {
     name: FieldName,
@@ -9,8 +16,14 @@ export interface StateField {
 }
 
 export interface Fields {
-    phone_or_email: StateField,
-    password: StateField
+    name: StateField,
+    city: StateField,
+    address: StateField,
+    working_days_and_hours: StateField,
+    telephone_number: StateField,
+    website: StateField,
+    email: StateField,
+    password: StateField,
 };
 
 export interface MappedField {

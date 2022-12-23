@@ -16,8 +16,8 @@ export const password: StateField = {
 };
 
 export const loginPersonalFields: MappedField[] = [
-    { type: "input", name: "phone_or_email", title: "E-mail or phone number", placeholder: "Type your e-mail or phone number" },
-    { type: "input", name: "password", title: "Password", placeholder: "Type your password" },
+    { type: "input", name: "phone_or_email", title: "E-mail or phone number", placeholder: "Type your e-mail or phone number", subtitle: '' },
+    { type: "input", name: "password", title: "Password", placeholder: "Type your password", subtitle: 'Must be 8 characters at least' },
 ];
 
 export const fieldsValidation: Validator = {

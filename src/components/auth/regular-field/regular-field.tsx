@@ -1,39 +1,40 @@
 import React from 'react';
 import styles from './regular-field.module.scss';
-import { Name } from './types';
 import classNames from 'classnames';
 
 interface Props {
-    name: Name,
+    name: string,
     title: string;
     inputValue: string;
     isValid: boolean;
     errorText: string | undefined;
     placeholder: string;
+    subtitle: string;
     handleFieldsChange: (e: React.ChangeEvent<{
         name: string | undefined;
         value: string;
-    }>, name: Name) => void;
-    handleFocus: (name: Name) => void;
-    handleBlur: (name: Name) => void;
+    }>, name: any) => void;
+    handleFocus: (name: any) => void;
+    handleBlur: (name: any) => void;
 }
 
 const RegularField: React.FC<Props> = (props) => {
-    const { 
-        name, 
-        title, 
-        inputValue, 
-        isValid, 
-        errorText, 
-        placeholder, 
-        handleFieldsChange, 
-        handleFocus, 
-        handleBlur 
+    const {
+        name,
+        title,
+        inputValue,
+        isValid,
+        errorText,
+        placeholder,
+        subtitle,
+        handleFieldsChange,
+        handleFocus,
+        handleBlur
     } = props;
 
     return <div className={styles.regularField}>
         <h2 className={styles.title}>{title}</h2>
-        <div className={classNames(styles.inputContainer,  {[styles.errored]: !isValid})}>
+        <div className={classNames(styles.inputContainer, { [styles.errored]: !isValid })}>
             <input
                 placeholder={placeholder}
                 type="text"
@@ -43,10 +44,13 @@ const RegularField: React.FC<Props> = (props) => {
                 onFocus={() => handleFocus(name)}
                 onBlur={() => handleBlur(name)}
             />
+            {
+                !isValid && <div className={styles.errorText}>{errorText}</div>
+            }
+            {
+                (subtitle && isValid) && <div className={styles.subtitle}>{subtitle}</div>
+            }
         </div>
-        {
-            !isValid && <div className={styles.errorText}>{errorText}</div>
-        }
     </div>
 }
 
