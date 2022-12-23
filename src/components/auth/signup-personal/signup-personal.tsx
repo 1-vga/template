@@ -108,8 +108,6 @@ const LoginPersonal: React.FC<Props> = (props) => {
             setBirth((prev) => ({ ...prev, isValid: false, errorText: 'Select birth date' }))
         }
 
-
-
         return isValid;
     };
 

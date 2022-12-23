@@ -11,7 +11,6 @@ const SignUpPage: React.FC<Props> = (props) => {
 
     const signupPersonalFields = location.pathname === '/signup' && location.hash === '#personal';
 
-
     return <div className={styles.signUpPage}>
         <AuthGreeting title='Create your account' subtitle='It’s free and easy' />
         <AuthTabs leftTab='Personal' rightTab='Institution' />
