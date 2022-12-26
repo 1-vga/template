@@ -1,5 +1,5 @@
 import { StateField, MappedField, Validator } from "./types";
-import { loginLabsValidation } from '../../../validation/validations';
+import { signupLabsValidation } from '../../../validation/validations';
 
 export const name: StateField = { name: "name", value: "", isValid: true, touched: false };
 export const city: StateField = { name: "city", value: "", isValid: true, touched: false, };
@@ -10,7 +10,7 @@ export const website: StateField = { name: "website", value: "", isValid: true, 
 export const email: StateField = { name: "email", value: "", isValid: true, touched: false, };
 export const password: StateField = { name: "password", value: "", isValid: true, touched: false, };
 
-export const loginLabsFields: MappedField[] = [
+export const signupLabsFields: MappedField[] = [
     { type: "input", name: "name", title: "Name", placeholder: "Type your name", subtitle: '' },
     { type: "input", name: "city", title: "City", placeholder: "Please enter your country", subtitle: '' },
     { type: "input", name: "address", title: "Address", placeholder: "Please enter your address", subtitle: '' },
@@ -22,12 +22,12 @@ export const loginLabsFields: MappedField[] = [
 ];
 
 export const fieldsValidation: Validator = {
-    name: loginLabsValidation.name,
-    city: loginLabsValidation.city,
-    address: loginLabsValidation.address,
-    working_days_and_hours: loginLabsValidation.working_days_and_hours,
-    telephone_number: loginLabsValidation.telephone_number,
-    website: loginLabsValidation.website,
-    email: loginLabsValidation.email,
-    password: loginLabsValidation.password
+    name: signupLabsValidation.name,
+    city: signupLabsValidation.city,
+    address: signupLabsValidation.address,
+    working_days_and_hours: signupLabsValidation.working_days_and_hours,
+    telephone_number: signupLabsValidation.telephone_number,
+    website: signupLabsValidation.website,
+    email: signupLabsValidation.email,
+    password: signupLabsValidation.password
 };
