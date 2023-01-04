@@ -1,24 +1,17 @@
 import React, { useState } from 'react';
 import styles from './subscribe.module.scss';
 
-
-
-
 interface Props {
 
 }
 
-
-
 const Subscribe: React.FC<Props> = () => {
     const [email, setEmail] = React.useState('');
-
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
         console.log(email);
         // api.login(email)
-
     };
     return <div className={styles.subscribeContainer}>
         <h1 className={styles.subscribeTitle}>Get In Touch</h1>

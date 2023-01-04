@@ -8,6 +8,7 @@ import { HomePage } from './pages/home-page';
 import { LabsPage } from './pages/labs-page';
 import { LoginPage } from './pages/login-page';
 import { SignUpPage } from './pages/signup-page';
+import { LabPage } from './pages/lab-page';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
             <Route path="/labs" element={<LabsPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/lab" element={<LabPage />} />
           </Routes>
         </div>
         <Footer />
