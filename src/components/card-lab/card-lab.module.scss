@@ -1,0 +1,77 @@
+.cardContainer {
+    width: 372px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    filter: drop-shadow(0 0 0.2rem rgba(13, 2, 4, 20%));
+    padding: 9px 9px 40px 9px;
+    border-radius: 9px;
+}
+
+.imgContainer {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 24px;
+
+    & img {
+        width: 100%;
+    }
+}
+
+.contentContainer {
+    padding: 0 17px;
+}
+
+.cardTitle {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 135%;
+    letter-spacing: 0.05em;
+    color: var(--title-text);
+    line-height: 135%;
+    margin-bottom: 17px;
+}
+
+.cardText {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 34px;
+    & li {
+        margin-bottom: 17px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        font-family: "Open Sans", sans-serif;
+    }
+
+    & li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.svg {
+    margin-right: 10px;
+}
+
+.cardButtons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttonLeft,
+.buttonRight {
+    width: 100%;
+    max-width: 152px;
+    padding: 17px;
+    border: 2px solid var(--primary);
+    border-radius: 4px;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.buttonLeft {
+    background-color: var(--primary);
+    color: var(--bg-primary);
+    margin-right: 25px;
+}
