@@ -10,7 +10,7 @@ import {
   daysHours
 } from "./validators";
 
-export const loginValidation = {
+export const loginPersonalValidation = {
   phone_or_email:  [
     requiredValidator('The field is required'),
     emailAndPhoneValidator('Email or phone is invalid'),
@@ -22,7 +22,7 @@ export const loginValidation = {
   ]
 };
 
-export const signupLabsValidation = {
+export const loginLabsValidation = {
   name: [
     requiredValidator('The field is required'),
     nameLastNameValidator('Invalid name'),

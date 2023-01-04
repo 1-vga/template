@@ -1,18 +1,42 @@
 import React, { useState } from 'react';
-import styles from './login.module.scss';
+import styles from './login-labs.module.scss';
 import RegularField from '../regular-field/regular-field';
 import { Fields, FieldName, MappedField } from './types';
-import { phone_or_email, password, loginFields, fieldsValidation } from './fields';
+import {
+    name,
+    city,
+    address,
+    working_days_and_hours,
+    telephone_number,
+    website,
+    email,
+    password,
+    loginLabsFields,
+    fieldsValidation
+} from './fields';
 
 interface Props {
 }
 
-const Login: React.FC<Props> = (props) => {
-    const [fields, setFields] = useState<Fields>({ phone_or_email, password });
+const LoginLabs: React.FC<Props> = (props) => {
+    const [fields, setFields] = useState<Fields>({
+        name,
+        city,
+        address,
+        working_days_and_hours,
+        telephone_number,
+        website,
+        email,
+        password
+    });
 
     const handleFieldsChange = (e: React.ChangeEvent<{ name: string | undefined; value: string; }>, name: FieldName) => {
+        const inputValue = (name === 'address' || name === 'working_days_and_hours')
+            ? e.target.value
+            : e.target.value.trim();
+
         setFields((prevState) => ({
-            ...prevState, [name]: { ...prevState[name], value: e.target.value.trim(), isValid: true }
+            ...prevState, [name]: { ...prevState[name], value: inputValue, isValid: true }
         }));
     };
 
@@ -46,7 +70,7 @@ const Login: React.FC<Props> = (props) => {
     const validate = () => {
         let isValid = true;
 
-        loginFields.forEach((field: MappedField) => {
+        loginLabsFields.forEach((field: MappedField) => {
             let errorText = "";
             fieldsValidation[field.name].forEach((validator) => {
                 if (errorText) {
@@ -76,30 +100,32 @@ const Login: React.FC<Props> = (props) => {
         const isValid = validate();
 
         if (isValid) {
-            console.log('valid personal');
+            console.log('valid labs');
         }
     };
 
-    return <form onSubmit={handleSubmit} className={styles.login}>
-        {
-            loginFields.map(field => {
-                return <RegularField
-                    key={field.name}
-                    name={field.name}
-                    title={field.title}
-                    inputValue={fields[field.name].value}
-                    placeholder={field.placeholder}
-                    subtitle={field.subtitle}
-                    isValid={fields[field.name].isValid}
-                    errorText={fields[field.name].errorText}
-                    handleFieldsChange={handleFieldsChange}
-                    handleFocus={handleFocus}
-                    handleBlur={handleBlur}
-                />
-            })
-        }
+    return <form onSubmit={handleSubmit} className={styles.loginLab}>
+        <div className={styles.fieldsContainer}>
+            {
+                loginLabsFields.map(field => {
+                    return <RegularField
+                        key={field.name}
+                        name={field.name}
+                        title={field.title}
+                        inputValue={fields[field.name].value}
+                        placeholder={field.placeholder}
+                        subtitle={field.subtitle}
+                        isValid={fields[field.name].isValid}
+                        errorText={fields[field.name].errorText}
+                        handleFieldsChange={handleFieldsChange}
+                        handleFocus={handleFocus}
+                        handleBlur={handleBlur}
+                    />
+                })
+            }
+        </div>
         <button type='submit' className={styles.button}>Sign in</button>
     </form>
 }
 
-export default Login;
+export default LoginLabs;

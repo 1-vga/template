@@ -14,14 +14,14 @@ const AuthTabs: React.FC<Props> = ({ leftTab, rightTab }) => {
 
     return <div className={styles.authTabs}>
         <Link
-            to={"/signup#personal"}
+            to={location.pathname === '/login' ? "/login#personal" : "/signup#personal"}
             className={classNames(styles.tab, { [styles.active]: location.hash === '#personal' })}
         >
             {leftTab}
         </Link>
         <Link
-            to={"/signup#institution"}
-            className={classNames(styles.tab, { [styles.active]: location.hash === '#institution' })}
+            to={location.pathname === '/login' ? "/login#lab" : "/signup#institution"}
+            className={classNames(styles.tab, { [styles.active]: location.hash === '#lab' || location.hash === '#institution' })}
         >
             {rightTab}
         </Link>
