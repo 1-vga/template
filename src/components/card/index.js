@@ -1,0 +1,1 @@
+export { default as cardBest } from './card-best';

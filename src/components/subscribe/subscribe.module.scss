@@ -1,0 +1,108 @@
+.subscribeContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subscribeTitle {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--bg-primary);
+    letter-spacing: 0.005em;
+    margin-bottom: 16px;
+}
+
+.subscribeSubTitle {
+    max-width: 445px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--bg-primary);
+    letter-spacing: 0.005em;
+    margin-bottom: 40px;
+    line-height: 23.52px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.contactForm {
+    width: 386px;
+    height: 58px;
+    background-color: var(--bg-primary);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 4px;
+    align-items: center;
+
+    & ::placeholder {
+        font-size: 15px;
+        font-weight: 700;
+        padding-left: 16px;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+}
+
+.formSubject {
+    font-size: 15px;
+    font-weight: 700;
+    padding-left: 16px;
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--bg-primary);
+}
+input:-webkit-autofill {
+    background-color: var(--bg-primary);
+  }
+
+input::-webkit-input-placeholder {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+input::-moz-placeholder {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+input:-moz-placeholder {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+input:-ms-input-placeholder {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+input:hover::-webkit-input-placeholder {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+input:hover::-moz-placeholder {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+input:hover:-moz-placeholder {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+input:hover:-ms-input-placeholder {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.subscribeBtn {
+    width: 99px;
+    height: 49px;
+    background-color: var(--primary);
+    border-radius: 4px;
+    color: var(--bg-primary);
+    font-weight: 700;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    margin-right: 5px;
+}

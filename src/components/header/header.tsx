@@ -25,7 +25,7 @@ const Header: React.FC<Props> = (props) => {
                 {
                     isSigned ? <SignedBlock />
                         : <div className={styles.signedContainer}>
-                            <NavLink to="/login" className={({ isActive }) => isActive ? styles.activePage : styles.page}>
+                            <NavLink to="/login#personal" className={({ isActive }) => isActive ? styles.activePage : styles.page}>
                                 Login
                             </NavLink>
                             <NavLink to="/signup#personal" className={({ isActive }) => isActive ? styles.activePage : styles.page}>
