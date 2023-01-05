@@ -1,3 +1,185 @@
 .labPage {
     width: 100%;
+    background-color: #F7FAFC;
+}
+.cotentContainer {
+    display: flex;
+}
+.content {
+    height: 2100px;
+    width: 760px;
+    border-radius: 4px;
+    background-color: white;
+    margin: 40px 135px;
+    border-radius: 5px;
+}
+.infoTop {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 40px;
+}
+.border {
+    border-bottom: 1px solid #E1E7EF;
+}
+.cardHeadinItem {
+    display: flex;
+    margin-bottom: 20px;
+}
+.cardHeading {
+    font-size: 24px;
+    font-weight: 700;
+    margin-right: 25px;
+}
+.cardReviews {
+    display: flex;
+    align-items: flex-end
+}
+.ratingList {
+    display: flex;
+}
+.starCard {
+    margin-right: 9px;
+}
+.rating {
+    font-size: 18px;
+    font-weight: 700;
+    margin-right: 7px;
+}
+.reviews {
+    font-size: 14px;
+    font-weight: 400;
+}
+.infotItem {
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    font-family: "Open Sans", sans-serif;
+}
+.infotItem span {
+    display: flex;
+    align-items: center;
+}
+.cardTextItem {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+.infotItemRow {
+    display: flex;
+    margin-top: 14px;
+    gap: 0 25px;
+    align-items: center;
+}
+.svg {
+    margin-right: 10px;
+}
+.menu {
+    margin-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.menuServices {
+    margin-bottom: 40px;
+}
+.menuServicesHeading {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+.menuList {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    position: relative;
+}
+.menuHeading,
+.menuDistance {
+    font-weight: 400;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    background-color: white;
+    display: inline-flex;
+    flex-shrink: 0;
+}
+.menuHeading {
+    margin-right: 10px;
+}
+.menuDistance {
+    margin-left: 10px;
+}
+.dashed {
+    width: 100%;
+    height: auto;
+    background: transparent;
+    border-bottom: 2px dashed #ddd;
+}
+.about,
+.description,
+.photos {
+    margin-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.aboutHeading,
+.descriptionHeading,
+.photosHeading {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+.map {
+    margin-bottom: 40px;
+    border-radius: 5px;
+}
+.descriptionSubtitle {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23.52px;
+    margin-bottom: 40px;
+}
+.photosImg {
+    display: flex;
+    flex-direction: column;
+}
+.row1 {
+    display: flex;
+    gap: 0 8px;
+    margin-bottom: 5px;
+}
+.row2 {
+    display: flex;
+    gap: 0 8px;
+}
+.callMe {
+    margin-top: 40px;
+    width: 387px;
+    height: 205px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.call {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 24px 72px 24px 40px;
+}
+.tell {
+    margin: 17px 40px 38px 28px;
+    background: rgba(20, 153, 152, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.31);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    padding: 20px;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+.tellA, .tellA:focus, .tellA:hover, .tellA:active  {
+    color: #149998;
 }
