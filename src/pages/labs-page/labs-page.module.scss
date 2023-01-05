@@ -22,33 +22,3 @@
         background: rgba(0, 0, 0, 0.3);
     }
 }
-
-.topContent {
-    position: absolute;
-    top: 342px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-}
-
-.topHeading {
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 64px;
-    line-height: 110%;
-    text-align: center;
-    letter-spacing: 0.005em;
-    color: #ffffff;
-}
-
-// style - subscribe
-
-.subscribe{
-    width: 100%;
-    background-color: var(--primary);
-    padding: 65px 0 70px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
