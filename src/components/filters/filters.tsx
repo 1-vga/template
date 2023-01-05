@@ -7,37 +7,41 @@ interface Props {
 }
 
 const Filters: React.FC<Props> = (props) => {
-    const [activeIndex, setActiveIndex] = useState<number | null>(null);
+    const [filters, setFilters] = useState<{[key: string]: {isOpen: boolean}}>({
+        city: {isOpen: false},
+        lab: {isOpen: false},
+        service: {isOpen: true},
+        range: {isOpen: false}
+    });
 
-    const showContent = (id: number) => {
-        setActiveIndex(id);
-        id === activeIndex && setActiveIndex(null);
+    const showContent = (id: string) => {
+        setFilters({...filters, [id]: {isOpen: !filters[id].isOpen}});
     }
 
     return <div className={styles.filters}>
         <h1 className={styles.title}>Filters</h1>
         <div className={styles.filtersContainer}>
             <Filter
-                id={1}
-                activeIndex={activeIndex}
+                id={'city'}
+                filters={filters}
                 title='Choose desired city'
                 showContent={showContent}
             />
             <Filter
-                id={2}
-                activeIndex={activeIndex}
+                id={'lab'}
+                filters={filters}
                 title='Choose desired lab'
-                showContent={() => showContent(1)}
+                showContent={showContent}
             />
             <Filter
-                id={3}
-                activeIndex={activeIndex}
+                id={'service'}
+                filters={filters}
                 title='Choose desired service'
                 showContent={showContent}
             />
             <Filter
-                id={4}
-                activeIndex={activeIndex}
+                id={'range'}
+                filters={filters}
                 title='Choose price range'
                 showContent={showContent}
             />

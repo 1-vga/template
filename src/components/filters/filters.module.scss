@@ -1,8 +1,7 @@
 .filters {
     width: 100%;
     width: 261px;
-    height: 50px;
-    padding: 0 61px 0 0;
+    margin-right: 146px;
 }
 
 .title {
@@ -11,4 +10,8 @@
     line-height: 117%;
     color: var(--titleText);
     margin-bottom: 24px;
+}
+
+.filtersContainer {
+    width: 100%;
 }
