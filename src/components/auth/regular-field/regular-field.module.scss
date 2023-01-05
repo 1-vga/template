@@ -21,12 +21,17 @@
     border: 1px solid transparent;
 
     & input,
-    input::placeholder {
+    input::placeholder,
+    input:focus {
         width: 100%;
         font-weight: 400;
         font-size: 16px;
         line-height: 147%;
         color: var(--simpleText);
+    }
+
+    input[type="password"] {
+        margin-right: 32px;
     }
 
     &.errored {
@@ -51,4 +56,21 @@
     line-height: 12px;
     color: var(--dimmedText);
     margin-top: 8px;
+}
+
+.showImg {
+    position: absolute;
+    width: 25px;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    & img {
+        width: 100%;
+        filter: invert(47%) sepia(0%) saturate(0%) hue-rotate(201deg) brightness(94%) contrast(82%);
+    }
 }
