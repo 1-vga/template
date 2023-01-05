@@ -18,7 +18,13 @@ const Subscribe: React.FC<Props> = () => {
         <h2 className={styles.subscribeSubTitle}>The gradual accumulation of information about atomic and
             small-scale behaviour during the first quarter of the 20th </h2>
         <form onSubmit={handleSubmit} className={styles.contactForm}>
-            <input type="email" className={styles.inputField} placeholder='Your Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input
+                type="email"
+                className={styles.inputField}
+                placeholder='Your Email'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+            />
             <button type='submit' className={styles.subscribeBtn}>Subscribe</button>
         </form>
     </div>
