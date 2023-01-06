@@ -17,7 +17,6 @@ interface Props {
 
 }
 
-
 const LabPage: React.FC<Props> = () => {
 
     return <div className={styles.labPage}>
@@ -112,7 +111,19 @@ const LabPage: React.FC<Props> = () => {
                 <div className={styles.border}></div>
                 <div className={styles.description}>
                     <h2 className={styles.title}>Description</h2>
-                    <div className={styles.descriptionSubtitle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra sed amet penatibus semper. Quam amet et porttitor etiam justo. Mauris tempus, mauris, at elementum est felis eu volutpat. Sapien, massa urna nisl, ut fermentum. Montes, quis nisl, proin odio dictum maecenas nunc, pulvinar. Magna eget phasellus facilisis quis auctor. Lacinia a risus magna tortor viverra nullam rhoncus nunc. Fermentum porta enim adipiscing eget et eget tortor tempus. Diam eu viverra fames orci enim, tortor amet feugiat tortor. Tristique in urna nunc, orci dui amet cursus posuere tortor. Scelerisque semper dolor, ut dolor augue morbi ut. Nec facilisis vel sit orci, fames. Proin dui arcu ante augue eget fermentum. Pretium, ultrices phasellus congue interdum sem quisque elementum scelerisque consequat. Sollicitudin tortor, faucibus dui convallis turpis neque, adipiscing vulputate dolor. Lacus diam, placerat dignissim elit donec nunc in. Quis et volutpat vitae tellus volutpat, quam ac. Ac praesent condimentum elit ut quis metus amet. Pharetra velit neque, enim consequat facilisis facilisis ornare venenatis.</div>
+                    <p className={styles.descriptionSubtitle}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra sed amet penatibus semper.
+                        Quam amet et porttitor etiam justo. Mauris tempus, mauris, at elementum est felis eu volutpat.
+                        Sapien, massa urna nisl, ut fermentum. Montes, quis nisl, proin odio dictum maecenas nunc, pulvinar.
+                        Magna eget phasellus facilisis quis auctor. Lacinia a risus magna tortor viverra nullam rhoncus nunc.
+                        Fermentum porta enim adipiscing eget et eget tortor tempus. Diam eu viverra fames orci enim, tortor
+                        amet feugiat tortor. Tristique in urna nunc, orci dui amet cursus posuere tortor. Scelerisque semper dolor,
+                        ut dolor augue morbi ut. Nec facilisis vel sit orci, fames. Proin dui arcu ante augue eget fermentum. Pretium,
+                        ultrices phasellus congue interdum sem quisque elementum scelerisque consequat. Sollicitudin tortor, faucibus
+                        dui convallis turpis neque, adipiscing vulputate dolor. Lacus diam, placerat dignissim elit donec nunc in.
+                        Quis et volutpat vitae tellus volutpat, quam ac. Ac praesent condimentum elit ut quis metus amet. Pharetra
+                        velit neque, enim consequat facilisis facilisis ornare venenatis.
+                    </p>
                 </div>
                 <div className={styles.border}></div>
                 <div className={styles.photos}>
@@ -129,10 +140,12 @@ const LabPage: React.FC<Props> = () => {
             <section className={styles.phoneSection}>
                 <div className={styles.call}>Call to make an appointment</div>
                 <div className={styles.border}></div>
-                <button className={styles.tell}><a className={styles.tellA} href="tel: 88005553535">+387 33 725 900</a></button>
+                <button className={styles.tell}>
+                    <a href="tel: 88005553535">+387 33 725 900</a>
+                </button>
             </section>
         </div>
-        {/* <Subscribe /> */}
+        <Subscribe />
     </div>
 }
 

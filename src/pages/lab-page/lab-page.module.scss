@@ -147,7 +147,7 @@
     width: 100%;
     height: auto;
     background: transparent;
-    border-bottom: 2px dashed #BCC0CA;;
+    border-bottom: 2px dashed #bcc0ca;
     margin: 0 10px;
 }
 .about,
@@ -190,7 +190,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-    } 
+    }
 }
 .phoneSection {
     width: 387px;
@@ -214,10 +214,12 @@
     font-size: 28px;
     font-weight: 600;
     letter-spacing: 0.05em;
-}
-.tellA,
-.tellA:focus,
-.tellA:hover,
-.tellA:active {
-    color: #149998;
+
+    & a,
+    a:focus,
+    a:active,
+    a:visited,
+    a:hover {
+        color: var(--primary);
+    }
 }
