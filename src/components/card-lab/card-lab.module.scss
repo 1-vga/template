@@ -53,14 +53,7 @@
     margin-right: 10px;
 }
 
-.cardButtons {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.buttonLeft,
-.buttonRight {
+.button {
     width: 100%;
     max-width: 152px;
     padding: 17px;
@@ -68,10 +61,9 @@
     border-radius: 4px;
     color: var(--primary);
     font-weight: 600;
-}
-
-.buttonLeft {
-    background-color: var(--primary);
-    color: var(--bg-primary);
-    margin-right: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    cursor: pointer;
 }
