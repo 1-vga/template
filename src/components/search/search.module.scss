@@ -1,0 +1,69 @@
+.search {
+    width: 100%;
+    max-width: 662px;
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+
+    &.labsPageTop {
+        top: 35%;
+    }
+}
+
+.title {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 110%;
+    text-align: center;
+    letter-spacing: 0.005em;
+    color: #ffffff;
+    margin-bottom: 57px;
+
+    &.labsPageMargin {
+        margin-bottom: 40px;
+    }
+}
+
+
+.form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 4px 4px 40px;
+    border-radius: 48px;
+    background: var(--bg-input);
+}
+
+.inputField {
+    width: 100%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 147%;
+    color: var(--dimmedText);
+    margin-right: 40px;
+
+    &::placeholder {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 147%;
+        color: var(--dimmedText);
+    }
+}
+
+.submitButton {
+    width: 129px;
+    height: 49px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-weight: 700;
+    color: #ffffff;
+    background: var(--primary);
+    border-radius: 48px;
+    cursor: pointer;
+}
