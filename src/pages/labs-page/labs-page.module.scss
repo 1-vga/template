@@ -27,10 +27,10 @@
 .sectionBottom {
     position: relative;
     background: var(--bg-primary);
-    max-width: 1480px;
+    max-width: 1176px;
     margin: 0 auto;
     display: flex;
-    padding: 104px 220px 74px 43px;
+    padding: 104px 0 74px 0;
 
     &::before {
         content: '';
