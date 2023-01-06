@@ -5,11 +5,12 @@ import styles from './labs-page.module.scss';
 import Subscribe from '../../components/subscribe/subscribe'
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { Search } from '../../components/search';
-import { Filters } from '../../components/filters';
+
 import { CardLab } from '../../components/card-lab';
 import photo from './images/roundedRectangle.jpg'
 import photoTwo from "./images/roundedRectangleTwo.jpg";
 import photoThree from "./images/roundedRectangleThree.jpg";
+import { Filters } from '../../components/filters';
 
 interface Props {
 }
