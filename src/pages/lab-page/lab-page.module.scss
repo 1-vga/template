@@ -214,12 +214,12 @@
     font-size: 28px;
     font-weight: 600;
     letter-spacing: 0.05em;
+    color: var(--primary);
 
-    & a,
-    a:focus,
-    a:active,
-    a:visited,
-    a:hover {
+    &:focus,
+    &:active,
+    &:visited,
+    &:hover {
         color: var(--primary);
     }
 }

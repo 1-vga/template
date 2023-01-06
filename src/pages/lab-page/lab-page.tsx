@@ -140,9 +140,7 @@ const LabPage: React.FC<Props> = () => {
             <section className={styles.phoneSection}>
                 <div className={styles.call}>Call to make an appointment</div>
                 <div className={styles.border}></div>
-                <button className={styles.tell}>
-                    <a href="tel: 88005553535">+387 33 725 900</a>
-                </button>
+                <a className={styles.tell} href="tel: 88005553535">+387 33 725 900</a>
             </section>
         </div>
         <Subscribe />
