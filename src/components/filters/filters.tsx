@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './filters.module.scss';
 import Filter from '../filter/filter';
 
@@ -7,15 +7,16 @@ interface Props {
 }
 
 const Filters: React.FC<Props> = (props) => {
-    const [filters, setFilters] = useState<{[key: string]: {isOpen: boolean}}>({
-        city: {isOpen: false},
-        lab: {isOpen: false},
-        service: {isOpen: true},
-        range: {isOpen: false}
+    const [historyFilter, setHistoryFilter] = useState('false');
+    const [filters, setFilters] = useState<{ [key: string]: { isOpen: boolean } }>({
+        city: { isOpen: false },
+        lab: { isOpen: false },
+        service: { isOpen: true },
+        range: { isOpen: false }
     });
 
     const showContent = (id: string) => {
-        setFilters({...filters, [id]: {isOpen: !filters[id].isOpen}});
+        setFilters({ ...filters, [id]: { isOpen: !filters[id].isOpen } });
     }
 
     return <div className={styles.filters}>
@@ -45,6 +46,29 @@ const Filters: React.FC<Props> = (props) => {
                 title='Choose price range'
                 showContent={showContent}
             />
+        </div>
+        <h2 className={styles.subtitle}>View search history</h2>
+        <div className={styles.additionalFilters}>
+            <label className={styles.radioContainer}>Yes
+                <input
+                    type="radio"
+                    name="history"
+                    value="true"
+                    checked={historyFilter === "true"}
+                    onChange={(e) => setHistoryFilter(e.currentTarget.value)}
+                />
+                <span className={styles.radioCheckmark}></span>
+            </label>
+            <label className={styles.radioContainer}>No
+                <input
+                    type="radio"
+                    name="history"
+                    value="false"
+                    checked={historyFilter === "false"}
+                    onChange={(e) => setHistoryFilter(e.currentTarget.value)}
+                />
+                <span className={styles.radioCheckmark}></span>
+            </label>
         </div>
     </div>
 }
