@@ -20,7 +20,7 @@ const HomePage: React.FC<Props> = (props) => {
             <Search title='Stay checked...'/>
         </section>
         <section className={styles.sectionBottom}>
-
+        <section id='section-home' className={styles.sectionBottom}>
             <h1 className={styles.service}>BEST SERVICES</h1>
             <h2 className={styles.title}>We recommend</h2>
             <div className={styles.recommendContent}>

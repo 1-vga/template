@@ -4,6 +4,7 @@ import svgLocation from '../../components/card-lab/images/svg/locationImg.svg'
 import svgTime from '../../components/card-lab/images/svg/timeImg.svg'
 import svgTell from '../../components/card-lab/images/svg/tellImg.svg'
 import svgWebsite from '../../components/card-lab/images/svg/websiteImg.svg'
+import { Link } from 'react-router-dom';
 
 interface Props {
     name: string;
@@ -29,7 +30,7 @@ const CardLab: React.FC<Props> = ({ name, location, time, tell, website, photo }
                 <li className={styles.textItem}><span><img className={styles.svg} src={svgTell} alt="tell" /></span>{tell}</li>
                 <li className={styles.textItem}><span><img className={styles.svg} src={svgWebsite} alt="website" /></span>{website}</li>
             </ul>
-            <button className={styles.button}>Call Now</button>
+            <Link to='/lab' className={styles.button}>Call Now</Link>
         </div>
     </div>
 }

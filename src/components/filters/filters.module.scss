@@ -14,4 +14,70 @@
 
 .filtersContainer {
     width: 100%;
+    margin-bottom: 27px;
+}
+
+.subtitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 147%;
+    color: var(--simpleText);
+    margin-bottom: 28px;
+}
+
+.additionalFilters {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.radioContainer {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--simpleText);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:first-child {
+        margin-right: 43px;
+    }
+
+    & input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+}
+
+.radioCheckmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: var(--bg-primary);
+    border-radius: 50%;
+    border: 2px solid #4d9fff;
+}
+
+.radioContainer input:checked ~ .radioCheckmark {
+    background-color: var(--bg-primary);
+}
+
+.radioContainer input:checked ~ .radioCheckmark::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background: #4d9fff;
 }
