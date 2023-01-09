@@ -1,9 +1,22 @@
-.popUpContainer {
+.popupContainer {
     width: 670px;
     border-radius: 4px;
     background-color: #ffff;
-    // border: 1px solid black;
     position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        height: 25px;
+        width: 25px;
+        background-color: inherit;
+        border: inherit;
+        top: calc(58% - 8px);
+        left: calc(100% - 13px);
+        clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+        transform: rotate(225deg);
+        border-radius: 0 0 0 0.25em;
+    }
 }
 
 .titleBox {
@@ -11,20 +24,6 @@
     justify-content: space-between;
     margin: 25px 0;
     padding: 0 40px;
-}
-
-.popUpContainer:before {
-    content: "";
-    position: absolute;
-    height: 25px;
-    width: 25px;
-    background-color: inherit;
-    border: inherit;
-    top: calc(58% - 8px);
-    left: calc(100% - 13px);
-    clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
-    transform: rotate(225deg);
-    border-radius: 0 0 0 0.25em;
 }
 
 .title {
@@ -40,7 +39,7 @@
     font-weight: 700;
     color: #ffff;
     padding: 4px 16px;
-    background: #F7936F;
+    background: #f7936f;
     border-radius: 88px;
     display: flex;
     flex-direction: row;
@@ -64,7 +63,7 @@
     display: flex;
 }
 
-.col50 {
+.column {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -73,23 +72,12 @@
 .infotitle {
     font-size: 15px;
     font-weight: 600;
-
     font-family: "Open Sans", sans-serif;
     margin-bottom: 25px;
-    color: #8F9EB5;
+    color: #8f9eb5;
     text-transform: uppercase;
     line-height: 116%;
-}
-
-.infotitleR {
-    font-size: 15px;
-    font-weight: 600;
-    font-family: "Open Sans", sans-serif;
-    margin-bottom: 25px;
-    color: #8F9EB5;
-    text-transform: uppercase;
-    line-height: 116%;
-    padding-left: 14px;
+    color: var(--titleText);
 }
 
 .patientInfo {
@@ -104,18 +92,18 @@
     border-radius: 50%;
     border: 1px solid white;
     margin-right: 16px;
-        & img {
+    & img {
         width: 100%;
-        }
+    }
 }
 
 .patientInfoCol {
     display: flex;
     flex-direction: column;
 
-        & .title {
+    & .title {
         margin-bottom: 4px;
-        }
+    }
 }
 
 .pcrTest {
@@ -152,9 +140,14 @@
     flex-direction: column;
 }
 
-.dateCol50 {
+.date {
     display: flex;
-    width: 50%;
+    align-items: center;
+    justify-content: flex-start;
+
+    &:first-child {
+        margin-right: 24px;
+    }
 }
 
 .svg {
@@ -163,9 +156,14 @@
     align-items: center;
     width: 28px;
     height: 28px;
+    padding: 7px;
     border-radius: 50%;
-    background: #1499981A;
+    background: #1499981a;
     margin-right: 8px;
+
+    & img {
+        width: 100%;
+    }
 }
 
 .dateCol50 {
@@ -179,10 +177,11 @@
     font-size: 14px;
     line-height: 16.7px;
     font-family: "Open Sans", sans-serif;
+    color: var(--simpleText);
 }
 
 .callAppoint {
-    background-color: #F16063;
+    background-color: #f16063;
     width: 283px;
     padding: 17px 72px;
     box-shadow: 0px 16px 40px rgba(20, 153, 152, 0.1);
@@ -199,5 +198,5 @@
 .buttonApp {
     margin-bottom: 40px;
     display: flex;
-    justify-content: flex-end
+    justify-content: flex-end;
 }

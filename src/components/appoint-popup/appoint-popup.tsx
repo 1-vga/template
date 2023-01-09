@@ -1,15 +1,15 @@
 import React from 'react';
-import styles from './appoint.module.scss'
+import styles from './appoint-popup.module.scss'
 import avatar from './images/photo.png'
 import tell from './images/phone.svg'
 import time from './images/time.svg'
 import calendar from './images/calendar.svg'
-interface Props {
 
+interface Props {
 }
 
-const Appoint: React.FC<Props> = () => {
-    return <div className={styles.popUpContainer}>
+const AppointPopup: React.FC<Props> = () => {
+    return <div className={styles.popupContainer}>
         <div className={styles.titleBox}>
             <div className={styles.title}>Appointment details</div>
             <div className={styles.postponed}>Postponed</div>
@@ -17,7 +17,7 @@ const Appoint: React.FC<Props> = () => {
         <div className={styles.border}></div>
         <div className={styles.infoBox}>
             <div className={styles.row}>
-                <div className={styles.col50}>
+                <div className={styles.column}>
                     <div className={styles.infotitle}>
                         Patient Information
                     </div>
@@ -32,23 +32,22 @@ const Appoint: React.FC<Props> = () => {
                     </div>
                     <button className={styles.callPatient}><div className={styles.tellImg}><img src={tell} alt="tell" /></div><div>Call the Patient</div></button>
                 </div>
-                <div className={styles.col50}>
-                    <div className={styles.infotitleR}>
+                <div className={styles.column}>
+                    <div className={styles.infotitle}>
                         DATE AND TIME
                     </div>
                     <div className={styles.dateInfo}>
                         <div className={styles.patientDateCol}>
-                            <div className={styles.dateCol50}>
+                            <div className={styles.date}>
                                 <div className={styles.svg}><img src={time} alt="time" /></div>
-
                                 <div className={styles.calendarTitle}>11:00 - 12:00</div>
                             </div>
-                            <div className={styles.dateCol50}>
+                            <div className={styles.date}>
                                 <div className={styles.svg}><img src={calendar} alt="calendar" /></div>
-                                <div className={styles.calendarTitle}>Feb 15, 2020</div></div>
+                                <div className={styles.calendarTitle}>Feb 15, 2020</div>
+                            </div>
                         </div>
                         <div className={styles.buttonApp}><button className={styles.callAppoint}>Cancel Appointment</button></div>
-                        
                     </div>
                 </div>
             </div>
@@ -56,4 +55,4 @@ const Appoint: React.FC<Props> = () => {
     </div>
 }
 
-export default Appoint;
+export default AppointPopup;
