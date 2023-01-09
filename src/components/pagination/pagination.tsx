@@ -36,7 +36,7 @@ function Pagination({ itemsPerPage }: any) {
 
     return (
         <>
-            <Items currentItems={currentItems} />
+            {/* <Items currentItems={currentItems} /> */}
             <ReactPaginate
                 breakLabel="..."
                 nextLabel="next"
