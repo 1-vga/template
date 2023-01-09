@@ -12,6 +12,7 @@ import corridor from '../lab-page/images/corridor-33.jpg';
 import doctors from '../lab-page/images/doctors-33.jpg';
 import bed from '../lab-page/images/bed-33.jpg';
 import lab33 from '../lab-page/images/lab-33.jpg';
+import { Carousel } from '../../components/carousel';
 
 interface Props {
 
@@ -20,6 +21,7 @@ interface Props {
 const LabPage: React.FC<Props> = () => {
 
     return <div className={styles.labPage}>
+        <Carousel />
         <div className={styles.cotentContainer}>
             <section className={styles.content}>
                 <div className={styles.infoTop}>

@@ -25,14 +25,14 @@ const Header: React.FC<Props> = (props) => {
 
         function watchTarget() {
             const isVisible = isScrolledIntoView(isLabsPage ? labsSection : isHomePage ? homeSection : null, {
-                full: false, 
+                full: false,
                 shift: window.innerHeight - Number(window.getComputedStyle(headerRef.current!).height.split('px')[0])
             });
 
             setTransparent(isVisible ? false : true);
         }
 
-        if(isLabsPage || isHomePage) {
+        if (isLabsPage || isHomePage) {
             setTransparent(true);
             window.addEventListener('scroll', watchTarget);
         } else {
