@@ -8,6 +8,7 @@ import photoTwo from "./images/roundedRectangleTwo.jpg";
 import photoThree from "./images/roundedRectangleThree.jpg";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { Search } from '../../components/search';
+import  Appoint  from '../../components/appoint/appoint';
 
 interface Props {
 }
@@ -17,9 +18,11 @@ const HomePage: React.FC<Props> = (props) => {
 
     return <div className={styles.homePage}>
         <section className={styles.sectionTop}>
+            
             <Search title='Stay checked...'/>
         </section>
         <section className={styles.sectionBottom}>
+
             <h1 className={styles.service}>BEST SERVICES</h1>
             <h2 className={styles.title}>We recommend</h2>
             <div className={styles.recommendContent}>
