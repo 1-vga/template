@@ -20,7 +20,7 @@ const LabsPage: React.FC<Props> = (props) => {
         <section className={styles.sectionTop}>
             <Search title='labs' />
         </section>
-        <section className={styles.sectionBottom}>
+        <section id='section-labs' className={styles.sectionBottom}>
             <Filters />
             <div className={styles.bottomContent}>
                 <h2 className={styles.title}>Search results <span>(all)</span></h2>
