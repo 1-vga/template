@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './lab-page.module.scss';
 import { Subscribe } from '../../components/subscribe';
 import svgLocation from '../lab-page/images/svg/locationImg.svg';
@@ -14,13 +14,25 @@ import bed from '../lab-page/images/bed-33.jpg';
 import lab33 from '../lab-page/images/lab-33.jpg';
 import { Carousel } from '../../components/carousel';
 import { Map } from '../../components/map';
+import { useNavigate, useParams } from "react-router-dom";
+
 
 interface Props {
 
 }
 
 const LabPage: React.FC<Props> = () => {
+    let navigate = useNavigate();
+    const params = useParams() as any;
 
+    //TODO lower logic must be replaced with response status
+    useEffect(() => {
+        //make enum
+        const allowed = params.id === '1' || params.id === '2' || params.id === '3';
+        !allowed && navigate("/notfound");        
+    }, []);
+    //
+    
     return <div className={styles.labPage}>
         <Carousel />
         <div className={styles.cotentContainer}>
