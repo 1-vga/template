@@ -1,0 +1,43 @@
+.profileFindingRow {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    background: #ffffff;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.cell {
+    padding-left: 24px;
+}
+
+.boldText {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 20px;
+    color: #425466;
+    line-height: 1;
+}
+
+.text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #425466;
+}
+
+.button {
+    width: 79px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 12px;  
+    color: #FFFFFF;
+    border-radius: 6px;
+    cursor: pointer;
+}

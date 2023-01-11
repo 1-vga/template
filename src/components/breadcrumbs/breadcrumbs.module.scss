@@ -1,0 +1,25 @@
+.breadCrumbs {
+    margin-bottom: 24px;
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+}
+.breadcrumb {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 116%;
+    color: #dd9500;   
+
+    &.active {
+        color: #647280;
+    }
+}
+
+.arrow {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 116%;
+    color: #647280;
+    margin: 0 8px;
+}

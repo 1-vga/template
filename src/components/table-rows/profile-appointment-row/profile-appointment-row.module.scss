@@ -3,4 +3,65 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 16px 0;
+    background: #ffffff;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.cell {
+    padding-left: 24px;
+}
+
+.boldText {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 20px;
+    color: #425466;
+    line-height: 1;
+}
+
+.text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #425466;
+}
+
+.status, .payment {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.iconContainer {
+    width: 16px;
+    margin-right: 12px;
+    line-height: 16px;
+
+    & img {
+        width: 100%;
+    }
+}
+
+.statusCircle {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.statusCircle[data-status="Scheduled"] {
+    background: #66CB9F;
+}
+
+.statusCircle[data-status="Postponed"] {
+    background: #F7936F;
+}
+
+.statusCircle[data-status="Canceled"] {
+    background: #F16063;
+}
+
+.statusCircle[data-status="Not discussed"] {
+    background: #A6B7D4;
 }

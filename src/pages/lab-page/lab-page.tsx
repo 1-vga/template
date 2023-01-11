@@ -15,7 +15,7 @@ import lab33 from '../lab-page/images/lab-33.jpg';
 import { Carousel } from '../../components/carousel';
 import { Map } from '../../components/map';
 import { useNavigate, useParams } from "react-router-dom";
-
+import { Breadcrumbs } from '../../components/breadcrumbs';
 
 interface Props {
 
@@ -29,14 +29,15 @@ const LabPage: React.FC<Props> = () => {
     useEffect(() => {
         //make enum
         const allowed = params.id === '1' || params.id === '2' || params.id === '3';
-        !allowed && navigate("/notfound");        
+        !allowed && navigate("/notfound");
     }, []);
     //
-    
+
     return <div className={styles.labPage}>
         <Carousel />
         <div className={styles.cotentContainer}>
             <section className={styles.content}>
+                <Breadcrumbs />
                 <div className={styles.infoTop}>
                     <div className={styles.cardInfo}>
                         <div className={styles.cardHeadingItem}>
@@ -122,7 +123,7 @@ const LabPage: React.FC<Props> = () => {
                 <div className={styles.about}>
                     <h2 className={styles.title}>About</h2>
                     <div className={styles.map}>
-                        <Map/>
+                        <Map />
                         {/* <img src={map} alt="map" /> */}
                     </div>
                 </div>

@@ -1,4 +1,6 @@
-export const rows = [
+export const columnsAppointment = ['test name', 'test name', 'date', 'payment method', 'fees', 'meeting status'];
+
+export const rowsAppointment = [
     {
         name: "PCR Test",
         name2: "PCR Test",
@@ -47,4 +49,29 @@ export const rows = [
         fees: "$3,500",
         status: "Scheduled",
     }
+]
+
+export const columnsFindings = ['test name', 'date', 'result'];
+
+export const rowsFindings = [
+    {
+        name: "PCR Test",
+        date: "Feb 15, 2020",
+    },
+    {
+        name: "Antigen Test",
+        date: "Feb 15, 2020",
+    },
+    {
+        name: "Diopter check",
+        date: "Feb 15, 2020",
+    },
+    {
+        name: "Diopter check",
+        date: "Feb 15, 2020",
+    },
+    {
+        name: "PCR Test",
+        date: "Feb 15, 2020",
+    },
 ]
