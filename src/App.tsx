@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './css/main.scss';
 import styles from './App.module.scss';
 import { Header } from './components/header';
@@ -11,6 +11,7 @@ import { SignUpPage } from './pages/signup-page';
 import { LabPage } from './pages/lab-page';
 import ProfilePage from './pages/profile-page/profile-page';
 import { Page404 } from './pages/page404';
+import ScrollToTop from './utils/scroll-to-top';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       <div className={styles.page}>
         <Header />
         <div className={styles.pageContent}>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/labs" element={<LabsPage />} />

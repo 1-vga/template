@@ -6,7 +6,6 @@ import star from '../lab-page/images/svg/star.svg';
 import svgTime from '../lab-page/images/svg/timeImg.svg';
 import svgTell from '../lab-page/images/svg/tellImg.svg';
 import svgWebsite from '../lab-page/images/svg/websiteImg.svg';
-import map from '../lab-page/images/map.jpg';
 import lab66 from '../lab-page/images/lab-66.jpg';
 import corridor from '../lab-page/images/corridor-33.jpg';
 import doctors from '../lab-page/images/doctors-33.jpg';
@@ -15,7 +14,7 @@ import lab33 from '../lab-page/images/lab-33.jpg';
 import { Carousel } from '../../components/carousel';
 import { Map } from '../../components/map';
 import { useNavigate, useParams } from "react-router-dom";
-
+import { Breadcrumbs } from '../../components/breadcrumbs';
 
 interface Props {
 
@@ -29,14 +28,19 @@ const LabPage: React.FC<Props> = () => {
     useEffect(() => {
         //make enum
         const allowed = params.id === '1' || params.id === '2' || params.id === '3';
-        !allowed && navigate("/notfound");        
+        !allowed && navigate("/notfound");
     }, []);
     //
-    
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     return <div className={styles.labPage}>
         <Carousel />
         <div className={styles.cotentContainer}>
             <section className={styles.content}>
+                <Breadcrumbs />
                 <div className={styles.infoTop}>
                     <div className={styles.cardInfo}>
                         <div className={styles.cardHeadingItem}>
@@ -61,18 +65,18 @@ const LabPage: React.FC<Props> = () => {
                                     </div>
                                     <div className={styles.infoText}>Mon-Sun: 10:00 - 18:00</div>
                                 </div>
-                                <div className={styles.infoItem}>
+                                <a className={styles.infoItem} href="tel: 88005553535">
                                     <div className={styles.svg}>
                                         <img className={styles.svg} src={svgTell} alt="tell" />
                                     </div>
                                     <div className={styles.infoText}>+387 33 725 900</div>
-                                </div>
-                                <div className={styles.infoItem}>
+                                </a>
+                                <a className={styles.infoItem} href="https://www.google.com" target='_blank'>
                                     <div className={styles.svg}>
                                         <img src={svgWebsite} alt="website" />
                                     </div>
                                     <div className={styles.infoText}>bosanes.ba</div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -122,8 +126,7 @@ const LabPage: React.FC<Props> = () => {
                 <div className={styles.about}>
                     <h2 className={styles.title}>About</h2>
                     <div className={styles.map}>
-                        <Map/>
-                        {/* <img src={map} alt="map" /> */}
+                        <Map />
                     </div>
                 </div>
                 <div className={styles.border}></div>

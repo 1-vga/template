@@ -1,48 +1,39 @@
-import React from 'react'
+import React, { useState, useCallback } from 'react'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { Marker } from '@react-google-maps/api';
 
 const containerStyle = {
-  width: '400px',
-  height: '400px'
+  width: '100%',
+  height: '100%'
 };
 
-const center = {
-  lat: -3.745,
-  lng: -38.523
-};
-
-function MyComponent() {
+function Map() {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: "YOUR_API_KEY"
+    googleMapsApiKey: String(process.env.REACT_APP_GOOGLE_MAP_API_KEY)
   })
 
-  const [map, setMap] = React.useState<google.maps.Map | null>(null)
+  const [map, setMap] = useState<google.maps.Map | null>(null)
 
-  const onLoad = React.useCallback(function callback(map: google.maps.Map) {
-    // This is just an example of getting and using the map instance!!! don't just blindly copy!
-    const bounds = new window.google.maps.LatLngBounds(center);
-    map.fitBounds(bounds);
-
+  const onLoad = useCallback(function callback(map: google.maps.Map) {
     setMap(map)
   }, [])
 
-  const onUnmount = React.useCallback(function callback(map: google.maps.Map) {
+  const onUnmount = useCallback(function callback(map: google.maps.Map) {
     setMap(null)
   }, [])
 
   return isLoaded ? (
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={10}
-        onLoad={onLoad}
-        onUnmount={onUnmount}
-      >
-        { /* Child components, such as markers, info windows, etc. */ }
-        <></>
-      </GoogleMap>
+    <GoogleMap
+      mapContainerStyle={containerStyle}
+      center={{ lat: 43.849306767831, lng: 18.378496170044 }}
+      zoom={14}
+      onLoad={onLoad}
+      onUnmount={onUnmount}
+    >
+      <Marker position={{ lat: 43.849306767831, lng: 18.378496170044 }}/>
+    </GoogleMap>
   ) : <></>
 }
 
-export default React.memo(MyComponent)
+export default React.memo(Map)

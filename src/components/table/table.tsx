@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import styles from './table.module.scss';
-import { ProfileAppointmentRow as RowInterface } from '../types';
-import { ProfileAppointmentRow } from '../table-rows';
+import { Row, TABLE } from '../types';
+import { ProfileAppointmentRow, ProfileFindingRow } from '../table-rows';
 
 interface Props {
+    type: TABLE;
     heading?: string;
     columnTitles: string[];
     emptyColumns?: number;
-    rows: RowInterface[];
+    rows: Row[];
 }
 
-const Table: React.FC<Props> = ({ heading, columnTitles, emptyColumns, rows }) => {
+const Table: React.FC<Props> = ({ heading, columnTitles, emptyColumns, rows, type }) => {
+    const cellWidth = 100 / columnTitles.length + (emptyColumns || 0);
+
     return <div className={styles.table}>
         {heading && <h1 className={styles.heading}>{heading}</h1>}
         <div className={styles.titlesContainer}>
@@ -19,18 +22,31 @@ const Table: React.FC<Props> = ({ heading, columnTitles, emptyColumns, rows }) =
                     return <div
                         key={i}
                         className={styles.columnTitle}
-                        style={{ width: `${100 / columnTitles.length + (emptyColumns || 0)}%` }}
+                        style={{ width: `${cellWidth}%` }}
                     >
                         {title}
                     </div>
                 })
             }
-            {emptyColumns && <div style={{ width: `${100 / (columnTitles.length + emptyColumns)}%` }} />}
+            {emptyColumns && <div style={{ width: `${cellWidth}%` }} />}
         </div>
         <div className={styles.rowsContainer}>
             {
-                rows.map((row, i) => {
-                    return <ProfileAppointmentRow key={i} data={row}/>
+                type === TABLE.PROFILE_APPOINTMENT && rows.map((row, i) => {
+                    return <ProfileAppointmentRow
+                        key={i}
+                        data={row}
+                        cellWidth={cellWidth}
+                    />
+                })
+            }
+            {
+                type === TABLE.PROFILE_FINDINGS && rows.map((row, i) => {
+                    return <ProfileFindingRow
+                        key={i}
+                        data={row}
+                        cellWidth={cellWidth}
+                    />
                 })
             }
         </div>

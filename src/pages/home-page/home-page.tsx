@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './home-page.module.scss';
 import { CardLab } from '../../components/card-lab';
 import Subscribe from '../../components/subscribe/subscribe'
@@ -8,16 +8,19 @@ import photoTwo from "./images/roundedRectangleTwo.jpg";
 import photoThree from "./images/roundedRectangleThree.jpg";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { Search } from '../../components/search';
+import { PREV_PATH } from '../../constants';
 
 interface Props {
 }
 
 const HomePage: React.FC<Props> = (props) => {
-    const location = useLocation();
+    useEffect(() => {
+        localStorage.setItem(PREV_PATH, 'Home');
+    }, []);
 
     return <div className={styles.homePage}>
         <section className={styles.sectionTop}>
-            <Search title='Stay checked...'/>
+            <Search title='Stay checked...' />
         </section>
         <section id='section-home' className={styles.sectionBottom}>
             <h1 className={styles.service}>BEST SERVICES</h1>
