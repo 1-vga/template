@@ -30,7 +30,8 @@
     color: #425466;
 }
 
-.status, .payment {
+.status,
+.payment {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -54,17 +55,17 @@
 }
 
 .statusCircle[data-status="Scheduled"] {
-    background: #66CB9F;
+    background: #66cb9f;
 }
 
 .statusCircle[data-status="Postponed"] {
-    background: #F7936F;
+    background: #f7936f;
 }
 
 .statusCircle[data-status="Canceled"] {
-    background: #F16063;
+    background: #f16063;
 }
 
 .statusCircle[data-status="Not discussed"] {
-    background: #A6B7D4;
+    background: #a6b7d4;
 }

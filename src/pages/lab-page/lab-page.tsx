@@ -34,7 +34,7 @@ const LabPage: React.FC<Props> = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0)
-      }, [])
+    }, [])
 
     return <div className={styles.labPage}>
         <Carousel />

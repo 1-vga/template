@@ -20,7 +20,7 @@ function App() {
       <div className={styles.page}>
         <Header />
         <div className={styles.pageContent}>
-          <ScrollToTop/>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/labs" element={<LabsPage />} />
