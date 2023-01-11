@@ -14,8 +14,6 @@ interface Props {
 }
 
 const HomePage: React.FC<Props> = (props) => {
-    const location = useLocation();
-
     useEffect(() => {
         localStorage.setItem(PREV_PATH, 'Home');
     }, []);

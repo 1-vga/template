@@ -6,7 +6,6 @@ import star from '../lab-page/images/svg/star.svg';
 import svgTime from '../lab-page/images/svg/timeImg.svg';
 import svgTell from '../lab-page/images/svg/tellImg.svg';
 import svgWebsite from '../lab-page/images/svg/websiteImg.svg';
-import map from '../lab-page/images/map.jpg';
 import lab66 from '../lab-page/images/lab-66.jpg';
 import corridor from '../lab-page/images/corridor-33.jpg';
 import doctors from '../lab-page/images/doctors-33.jpg';
@@ -32,6 +31,10 @@ const LabPage: React.FC<Props> = () => {
         !allowed && navigate("/notfound");
     }, []);
     //
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
 
     return <div className={styles.labPage}>
         <Carousel />
@@ -62,18 +65,18 @@ const LabPage: React.FC<Props> = () => {
                                     </div>
                                     <div className={styles.infoText}>Mon-Sun: 10:00 - 18:00</div>
                                 </div>
-                                <div className={styles.infoItem}>
+                                <a className={styles.infoItem} href="tel: 88005553535">
                                     <div className={styles.svg}>
                                         <img className={styles.svg} src={svgTell} alt="tell" />
                                     </div>
                                     <div className={styles.infoText}>+387 33 725 900</div>
-                                </div>
-                                <div className={styles.infoItem}>
+                                </a>
+                                <a className={styles.infoItem} href="https://www.google.com" target='_blank'>
                                     <div className={styles.svg}>
                                         <img src={svgWebsite} alt="website" />
                                     </div>
                                     <div className={styles.infoText}>bosanes.ba</div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -124,7 +127,6 @@ const LabPage: React.FC<Props> = () => {
                     <h2 className={styles.title}>About</h2>
                     <div className={styles.map}>
                         <Map />
-                        {/* <img src={map} alt="map" /> */}
                     </div>
                 </div>
                 <div className={styles.border}></div>
