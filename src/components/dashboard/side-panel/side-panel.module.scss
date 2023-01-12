@@ -1,7 +1,14 @@
-.sidePanel{
-    width: 100%;
-    max-width: 17.6%;
+.sidePanel {
+    width: 250px;
+    height: 100%;
     padding: 32px 24px 36px;
+    background: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .logo {
@@ -11,4 +18,39 @@
     & img {
         width: 100%;
     }
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    &:not(:last-child) {
+        margin-bottom: 32px;
+    }
+}
+
+.itemImage {
+    width: 16px;
+    margin-right: 20px;
+    & img {
+        width: 100%;
+    }
+}
+
+.itemText {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #425466;
 }

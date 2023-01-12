@@ -13,7 +13,7 @@ const CreateAppointment: React.FC<Props> = () => {
             <div className={styles.buttonImage}>
                 <img src={addIcon} alt="add" />
             </div>
-            <div className={styles.buttonText}></div>
+            <div className={styles.buttonText}>Create an Appointment</div>
         </button>
     </div>
 }
