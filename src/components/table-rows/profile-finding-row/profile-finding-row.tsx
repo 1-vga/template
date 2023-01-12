@@ -5,11 +5,16 @@ import classNames from 'classnames';
 import cardIcon from '../images/card.svg';
 
 interface Props {
-    data: Row,
-    cellWidth: number
+    data: Row;
+    cellWidth: number;
+    setPopup?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const ProfileFindingRow: React.FC<Props> = ({ data, cellWidth }) => {
+const ProfileFindingRow: React.FC<Props> = ({ data, cellWidth, setPopup }) => {
+    const handleClick = () => {
+        setPopup && setPopup(true);
+    }
+
     return <div className={styles.profileFindingRow}>
         <div style={{ width: `${cellWidth}%` }} className={classNames(styles.cell, styles.boldText)}>
             {data.name}
@@ -18,7 +23,7 @@ const ProfileFindingRow: React.FC<Props> = ({ data, cellWidth }) => {
             {data.date}
         </div>
         <div style={{ width: `${cellWidth}%` }} className={classNames(styles.cell, styles.text)}>
-            <button className={styles.button}>View</button>
+            <button className={styles.button} onClick={handleClick}>View</button>
         </div>
     </div>
 }
