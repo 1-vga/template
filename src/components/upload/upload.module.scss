@@ -1,5 +1,23 @@
+.resultPopup {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 11;
+}
+
+.backdrop {
+    background: rgba(0, 0, 0, 0.45);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 11;
+}
+
 .container {
     width: 660px;
+    height: 471px;
     border-radius: 4px;
     background-color: var(--bg-input);
 }
@@ -124,7 +142,7 @@ input[type=file] {
     display: flex;
     justify-content: space-between;
     padding-right: 39px;
-    margin-bottom: 40px;
+   
 }
 
 .btnLeft,
