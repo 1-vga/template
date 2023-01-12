@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './profile-page.module.scss';
 import avatar from './images/avatar.png';
 import { Table } from '../../components/table';
 import { rowsAppointment, columnsAppointment, columnsFindings, rowsFindings } from '../../dataProfile';
 import { TABLE } from '../../components/types';
+import { ResultPopup } from '../../components/result-popup';
+import { PDFDownloadLink } from '@react-pdf/renderer';
 
 interface Props {
 }
 
 const ProfilePage: React.FC<Props> = (props) => {
+    const [popup, setPopup] = useState(false);
 
     return <div className={styles.profilePage}>
         <section className={styles.topSection}>
@@ -46,9 +49,11 @@ const ProfilePage: React.FC<Props> = (props) => {
                 type={TABLE.PROFILE_FINDINGS}
                 columnTitles={columnsFindings}
                 rows={rowsFindings}
+                setPopup={setPopup}
             />
             <button className={styles.button}>See all</button>
         </div>
+        { popup && <ResultPopup setPopup={setPopup}/>}
     </div>
 }
 

@@ -9,9 +9,10 @@ interface Props {
     columnTitles: string[];
     emptyColumns?: number;
     rows: Row[];
+    setPopup?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Table: React.FC<Props> = ({ heading, columnTitles, emptyColumns, rows, type }) => {
+const Table: React.FC<Props> = ({ heading, columnTitles, emptyColumns, rows, type, setPopup }) => {
     const cellWidth = 100 / columnTitles.length + (emptyColumns || 0);
 
     return <div className={styles.table}>
@@ -46,6 +47,7 @@ const Table: React.FC<Props> = ({ heading, columnTitles, emptyColumns, rows, typ
                         key={i}
                         data={row}
                         cellWidth={cellWidth}
+                        setPopup={setPopup}
                     />
                 })
             }

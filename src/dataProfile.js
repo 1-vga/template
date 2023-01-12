@@ -2,12 +2,12 @@ export const columnsAppointment = ['test name', 'test name', 'date', 'payment me
 
 export const rowsAppointment = [
     {
-        name: "PCR Test PCR Test PCR Test PCR Test PCR Test PCR Test PCR Test",
-        name2: "PCR Test fdsa dsaf asdfasdfas asfdasdfsad sda f",
-        date: "Feb 15, 2020 sadf asdfsdafasdfsadf sadfasdfas",
-        payment: "**** 4231 sad fsdaf asdf sdf asdfsda",
-        fees: "$3,500 asdf sdafasdf asdfasdf asdfsadf ",
-        status: "Scheduled sadf uno dos tres quatro cinco",
+        name: "PCR Test",
+        name2: "PCR Test",
+        date: "Feb 15, 2020",
+        payment: "**** 4231",
+        fees: "$3,500",
+        status: "Scheduled",
     },
     {
         name: "Antigen Test",
