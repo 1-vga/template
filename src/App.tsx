@@ -12,6 +12,7 @@ import { LabPage } from './pages/lab-page';
 import ProfilePage from './pages/profile-page/profile-page';
 import { Page404 } from './pages/page404';
 import ScrollToTop from './utils/scroll-to-top';
+import { AdminDashboard } from './pages/admin-dashboard';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path='/profile' element={<ProfilePage />} />
+            <Route path='/admin-dashboard' element={<AdminDashboard />} />
             <Route path='/about' element={<div>About page</div>} />
             <Route path='/agency-services' element={<div>Agency Services</div>} />
             <Route path='/staff-services' element={<div>Staff Services</div>} />
