@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './table.module.scss';
 import { Row, TABLE } from '../types';
-import { ProfileAppointmentRow, ProfileFindingRow } from '../table-rows';
+import { ProfileAppointmentRow, ProfileFindingRow, DashboardAdminRow } from '../table-rows';
 
 interface Props {
     type: TABLE;
@@ -48,6 +48,15 @@ const Table: React.FC<Props> = ({ heading, columnTitles, emptyColumns, rows, typ
                         data={row}
                         cellWidth={cellWidth}
                         setPopup={setPopup}
+                    />
+                })
+            }
+            {
+                type === TABLE.DASHBOARD_ADMIN && rows.map((row, i) => {
+                    return <DashboardAdminRow
+                        key={i}
+                        data={row}
+                        cellWidth={cellWidth}
                     />
                 })
             }

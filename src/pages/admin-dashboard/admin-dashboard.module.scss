@@ -11,6 +11,7 @@
 .content {
     width: 100%;
     max-width: 1170px;
+    margin-left: 250px;
 }
 
 .dataSection {
@@ -23,4 +24,20 @@
     align-items: center;
     gap: 30px;
     justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 147%;
+    color: var(--darkText);
+    margin-bottom: 26px;
+}
+
+.appointmentsContainer {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
 }
