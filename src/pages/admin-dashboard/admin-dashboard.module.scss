@@ -12,3 +12,15 @@
     width: 100%;
     max-width: 1170px;
 }
+
+.dataSection {
+    padding: 30px;
+    background: var(--bg-primary);
+}
+
+.indicationsContainer {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: space-between;
+}
