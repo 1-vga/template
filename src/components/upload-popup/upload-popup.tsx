@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import styles from './upload.module.scss';
+import styles from './upload-popup.module.scss';
 import avatar from './images/photo.png';
 import uploadImg from './images/uploadImg.svg';
-
+import { v4 as uuidv4 } from "uuid";
 
 interface Props {
     // setPopup: React.Dispatch<React.SetStateAction<boolean>>;
@@ -10,7 +10,11 @@ interface Props {
 
 const Upload: React.FC<Props> = () => {
 
-    const [file, setFile] = React.useState('');
+    const [file, setFile] = React.useState<{
+        id: string;
+        path: string;
+        file: File;
+    } | null>(null);
     const [text, setText] = React.useState('');
 
 
@@ -18,9 +22,22 @@ const Upload: React.FC<Props> = () => {
         event.preventDefault();
         console.log(file, text);
     };
-    return <div className={styles.resultPopup}>
-        <div className={styles.backdrop}>
-            <div className={styles.container}>
+
+    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const fileContent = event.target.files;
+        if (fileContent) {
+            const preparedFile = {
+                id: uuidv4(),
+                path: URL.createObjectURL(fileContent[0]),
+                file: fileContent[0],
+            };
+            setFile(preparedFile);
+        }
+    }
+
+    return <div className={styles.uploadPopup}>
+        <div className={styles.backdrop} >
+            <div className={styles.content}>
                 <div className={styles.titleBox}>
                     <div className={styles.uploadTitle}>
                         Upload Test Result
@@ -41,10 +58,10 @@ const Upload: React.FC<Props> = () => {
                 <form onSubmit={handleSubmit} className={styles.uploadForm}>
                     <label className={styles.file}>
                         <input
-                            type="file" multiple
+                            type="file"
+                            multiple
                             className={styles.inputField}
-                            value={file}
-                            onChange={(e) => setFile(e.target.value)}
+                            onChange={handleFileChange}
                         />
                         <div className={styles.labelFile}>
                             <div className={styles.fileTitle}>Upload document</div>
@@ -55,9 +72,9 @@ const Upload: React.FC<Props> = () => {
                         value={text}
                         onChange={(e) => setText(e.target.value)}
                     ></textarea>
-                    <div className={styles.btnRow}>
-                        <div className={styles.btnLeft}> <button type='submit' className={styles.subscribeBtn}>Upload test result</button></div>
-                        <div className={styles.btnRigt}> <button type='submit' className={styles.subscribeBtn}>Cancel </button></div>
+                    <div className={styles.buttonRow}>
+                        <button type='submit' className={styles.btnLeft}>Upload test result</button>
+                        <button type='submit' className={styles.btnRigt}>Cancel </button>
                     </div>
                 </form>
             </div>

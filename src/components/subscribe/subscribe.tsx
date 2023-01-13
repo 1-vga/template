@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styles from './subscribe.module.scss';
-import Upload from '../upload/upload'
 interface Props {
 
 }
@@ -27,8 +26,6 @@ const Subscribe: React.FC<Props> = () => {
             />
             <button type='submit' className={styles.subscribeBtn}>Subscribe</button>
         </form>
-
-        <Upload />
     </div>
 }
 

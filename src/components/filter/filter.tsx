@@ -17,11 +17,18 @@ const Filter: React.FC<Props> = ({ title, id, filters, showContent }) => {
             <div className={classNames(styles.arrow, { [styles.active]: filters[id].isOpen })} />
         </div>
         <div className={classNames(styles.hiddenContent, { [styles.isOpen]: filters[id].isOpen })}>
-            <div className={styles.filterItem}>filter 1</div>
-            <div className={styles.filterItem}>filter 2</div>
-            <div className={styles.filterItem}>filter 3</div>
-            <div className={styles.filterItem}>filter 4</div>
-            <div className={styles.filterItem}>filter 5</div>
+            <label className={styles.filterItem}>
+                <input type="checkbox" />
+                <span>filter 1</span>
+            </label>
+            <label className={styles.filterItem}>
+                <input type="checkbox" />
+                <span>filter 2</span>
+            </label>
+            <label className={styles.filterItem}>
+                <input type="checkbox" />
+                <span>filter 3</span>
+            </label>
         </div>
     </div>
 }
