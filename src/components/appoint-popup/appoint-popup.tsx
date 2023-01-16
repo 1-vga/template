@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './appoint-popup.module.scss'
 import avatar from './images/photo.png'
 import tell from './images/phone.svg'
@@ -9,10 +9,17 @@ interface Props {
 }
 
 const AppointPopup: React.FC<Props> = () => {
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        // request to server
+        // setIsLoading(false);
+    }, []);
+
     return <div className={styles.popupContainer}>
         <div className={styles.titleBox}>
             <div className={styles.title}>Appointment details</div>
-            <div className={styles.postponed}>Postponed</div>
+            <div className={styles.status}>Postponed</div>
         </div>
         <div className={styles.border}></div>
         <div className={styles.infoBox}>
@@ -30,7 +37,12 @@ const AppointPopup: React.FC<Props> = () => {
                             <div className={styles.pcrTest}>PCR Test</div>
                         </div>
                     </div>
-                    <button className={styles.callPatient}><div className={styles.tellImg}><img src={tell} alt="tell" /></div><div>Call the Patient</div></button>
+                    <button className={styles.callPatient}>
+                        <div className={styles.tellImg}>
+                            <img src={tell} alt="tell" />
+                        </div>
+                        <div>Call the Patient</div>
+                    </button>
                 </div>
                 <div className={styles.column}>
                     <div className={styles.infotitle}>
@@ -47,7 +59,7 @@ const AppointPopup: React.FC<Props> = () => {
                                 <div className={styles.calendarTitle}>Feb 15, 2020</div>
                             </div>
                         </div>
-                        <div className={styles.buttonApp}><button className={styles.callAppoint}>Cancel Appointment</button></div>
+                        <button className={styles.buttonCancel}>Cancel Appointment</button>
                     </div>
                 </div>
             </div>

@@ -91,6 +91,7 @@ const AdminDashboard: React.FC<Props> = () => {
                     type={TABLE.DASHBOARD_ADMIN}
                     columnTitles={columnsAppointment}
                     rows={rowsAppointment}
+                    heading='New Appointments'
                 />
             </section>
         </div>

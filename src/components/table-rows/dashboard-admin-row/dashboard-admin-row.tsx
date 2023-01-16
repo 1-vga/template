@@ -2,20 +2,19 @@ import React, { useEffect, useState } from 'react';
 import styles from './dashboard-admin-row.module.scss';
 import { Row } from '../../types';
 import classNames from 'classnames';
-import cardIcon from '../images/card.svg';
+import { AppointPopup } from '../../appoint-popup';
+import OutsideClickHandler from 'react-outside-click-handler';
 
 interface Props {
     data: Row;
     cellWidth: number;
-    setPopup?: React.Dispatch<React.SetStateAction<boolean>>;
+    appointmentId: string;
+    setAppointmentId: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const DashboardAdminRow: React.FC<Props> = ({ data, cellWidth, setPopup }) => {
-    // const [popup, setPopup] = useState({isOpen: false, id: ''});
+const DashboardAdminRow: React.FC<Props> = ({ data, cellWidth, appointmentId, setAppointmentId }) => {
     const handleClick = () => {
-        setPopup && setPopup(true);
-
-        console.log('id', data.id);
+        setAppointmentId(data.id!);
     }
 
     return <div className={styles.profileAppointmentRow}>
@@ -38,8 +37,13 @@ const DashboardAdminRow: React.FC<Props> = ({ data, cellWidth, setPopup }) => {
             <div data-status={data.status} className={styles.statusCircle}></div>
             <div className={styles.text}>{data.status}</div>
         </div>
-        <div style={{ width: `${cellWidth}%` }} className={classNames(styles.cell, styles.text)}>
+        <div style={{ width: `${cellWidth}%` }} className={classNames(styles.cell, styles.text, styles.visible)}>
             <button className={styles.button} onClick={handleClick}>View Details</button>
+            {appointmentId === data.id && <OutsideClickHandler
+                onOutsideClick={() => { setAppointmentId('') }}
+            >
+                <AppointPopup />
+            </OutsideClickHandler>}
         </div>
     </div>
 }

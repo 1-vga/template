@@ -6,6 +6,10 @@
     padding: 16px 0;
     background: #ffffff;
     border-bottom: 1px solid #edf2f7;
+
+    &:last-child {
+        border-radius: 0 0 16px 16px;
+    }
 }
 
 .cell {
