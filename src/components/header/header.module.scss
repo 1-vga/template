@@ -19,6 +19,12 @@
     & .page {
         color: white;
     }
+
+    @media(max-width: 700px) {
+        & .logoContainer {
+            max-width: 120px;
+        }
+    }
 }
 
 .content {
@@ -38,6 +44,10 @@
     & img {
         width: 100%;
     }
+
+    @media(max-width: 700px) {
+        max-width: 120px;
+    }
 }
 
 .pages {
@@ -45,6 +55,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 36px 0;
+
+    @media(max-width: 700px) {
+        padding: 18px 0;
+    }
 }
 
 .page {
@@ -52,20 +66,49 @@
     line-height: 147%;
     color: var(--titleText);
     transition: all 0.3s;
+
     &:not(:last-child) {
         margin-right: 40px;
+    }
+
+    @media(max-width: 700px) {
+        font-size: 14px;
+
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+
+    @media(max-width: 420px) {
+        &:not(:last-child) {
+            margin-right: 15px;
+        }
     }
 }
 
 .activePage {
     font-size: 16px;
     line-height: 147%;
-    color: var(--titleText);
+    color: var(--primary);
+    font-weight: 700;
+
     &:not(:last-child) {
         margin-right: 40px;
     }
-    color: var(--primary);
-    font-weight: 700;
+
+    @media(max-width: 700px) {
+        font-size: 14px;
+
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+
+    @media(max-width: 420px) {
+        &:not(:last-child) {
+            margin-right: 15px;
+        }
+    }
 }
 
 .signedContainer {

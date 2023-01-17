@@ -2,6 +2,10 @@
     width: 100%;
     max-width: 425px;
     margin-bottom: 32px;
+
+    @media(max-width: 700px) {
+        margin-bottom: 24px;
+    }
 }
 
 .title {
@@ -36,6 +40,17 @@
 
     &.errored {
         border: 1px solid var(--error);
+    }
+
+    @media(max-width: 700px) {
+        padding: 8px 12px;
+
+        & input,
+        input::placeholder,
+        input:focus {
+            font-size: 14px;
+            line-height: 127%;
+        }
     }
 }
 

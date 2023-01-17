@@ -27,7 +27,7 @@
 .sectionBottom {
     background: var(--bg-primary);
     max-width: 1167px;
-    padding: 63px 0 52px;
+    padding: 63px 16px 52px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -41,6 +41,14 @@
     gap: 0 25px;
     margin-bottom: 25px;
 
+    @media(max-width: 890px) {
+        gap: 0 15px;
+    }
+
+    @media(max-width: 700px) {
+        flex-direction: column;
+        gap: 35px 0;
+    }
 }
 
 .offersContent {
@@ -53,6 +61,14 @@
     color: var(--primary);
     margin-bottom: 15px;
     text-transform: uppercase;
+
+    @media(max-width: 890px) {
+        font-size: 16px;
+    }
+
+    @media(max-width: 700px) {
+        font-size: 14px;
+    }
 }
 
 .title {
@@ -60,4 +76,14 @@
     font-weight: 700;
     letter-spacing: 0.005em;
     margin-bottom: 56px;
+
+    @media(max-width: 890px) {
+        font-size: 36px;
+        margin-bottom: 38px;
+    }
+
+    @media(max-width: 700px) {
+        font-size: 28px;
+        margin-bottom: 38px;
+    }
 }

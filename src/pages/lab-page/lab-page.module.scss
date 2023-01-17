@@ -2,6 +2,10 @@
     width: 100%;
     background-color: #f7fafc;
     margin-top: 95px;
+
+    @media(max-width: 700px) {
+        margin-top: 56.5px;
+    }
 }
 
 .cotentContainer {
@@ -20,6 +24,11 @@
     border-radius: 5px;
     margin-right: 24px;
     padding-top: 24px;
+
+    @media(max-width: 1200px) {
+        max-width: 100%;
+        margin-right: 0;
+    }
 }
 
 .infoTop {
@@ -47,6 +56,11 @@
     margin-right: 25px;
     color: var(--titleText);
     line-height: 117%;
+
+    @media(max-width: 600px) {
+        font-size: 18px;
+        margin-right: 12px;
+    }
 }
 
 .cardReviews {
@@ -66,6 +80,18 @@
     & img {
         width: 100%;
     }
+
+    @media(max-width: 1200px) {
+        height: 24px;
+        width: 24px;
+        margin-right: 12px;
+    }
+
+    @media(max-width: 600px) {
+        margin-right: 5px;
+        height: 14px;
+        width: 14px;
+    }
 }
 
 .rating {
@@ -74,6 +100,14 @@
     margin-right: 7px;
     color: var(--titleText);
     line-height: 0;
+
+    @media(max-width: 1200px) {
+        font-size: 21px;
+    }
+
+    @media(max-width: 600px) {
+        font-size: 16px;
+    }
 }
 
 .reviews {
@@ -81,11 +115,23 @@
     font-weight: 400;
     color: var(--titleText);
     line-height: 0;
+
+    @media(max-width: 1200px) {
+        font-size: 16px;
+    }
+
+    @media(max-width: 600px) {
+        font-size: 14px;
+    }
 }
 
 .infoItem {
     display: flex;
     align-items: center;
+
+    @media(max-width: 500px) {
+        margin-bottom: 12px;
+    }
 }
 
 .infoText {
@@ -93,6 +139,22 @@
     font-size: 14.4px;
     line-height: 0;
     color: var(--titleText);
+
+    &.mobile {
+        @media(max-width: 1200px) {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+    }
+
+    @media(max-width: 600px) {
+        font-size: 14px;
+    }
+
+    @media(max-width: 500px) {
+        line-height: 1;
+    }
 }
 
 .infoItem {
@@ -110,15 +172,29 @@
     margin-top: 14px;
     gap: 0 25px;
     align-items: center;
+
+    @media(max-width: 600px) {
+        gap: 0 15px;
+    }
+
+    @media(max-width: 500px) {
+        flex-wrap: wrap;
+        margin-top: 0;
+    }
 }
 
 .svg {
     width: 16px;
     height: 16px;
     margin-right: 10px;
+    flex-shrink: 0;
 
     & img {
         width: 100%;
+    }
+
+    @media(max-width: 600px) {
+        margin-right: 3px;
     }
 }
 
@@ -173,13 +249,17 @@
     margin: 0 10px;
 }
 
+.infoTop,
 .about,
 .description,
-.photos {
-    margin-top: 40px;
-    margin-bottom: 40px;
-    padding-left: 40px;
-    padding-right: 40px;
+.photos,
+.menu {
+    margin: 40px auto;
+    padding: 0 40px;
+
+    @media(max-width: 1200px) {
+        padding: 0 16px;
+    }
 }
 
 .title {
@@ -195,6 +275,11 @@
     height: 157px;
     border-radius: 5px;
     overflow: hidden;
+
+    @media(max-width: 1200px) {
+        height: 257px;
+        width: 100%;
+    }
 }
 
 .descriptionSubtitle {
@@ -222,6 +307,22 @@
         height: 100%;
         object-fit: cover;
     }
+
+    @media(max-width: 700px) {
+        width: 32.35%;
+    }
+
+    @media(max-width: 600px) {
+        width: 32.15%;
+    }
+
+    @media(max-width: 500px) {
+        width: 32%;
+    }
+
+    @media(max-width: 440px) {
+        width: 31.5%;
+    }
 }
 
 .phoneSection {
@@ -230,6 +331,10 @@
     border-radius: 5px;
     display: flex;
     flex-direction: column;
+
+    @media(max-width: 1200px) {
+        display: none;
+    }
 }
 
 .call {
