@@ -1,6 +1,7 @@
 .labPage {
     width: 100%;
     background-color: #f7fafc;
+    margin-top: 95px;
 }
 
 .cotentContainer {
@@ -74,12 +75,14 @@
     color: var(--titleText);
     line-height: 0;
 }
+
 .reviews {
     font-size: 14px;
     font-weight: 400;
     color: var(--titleText);
     line-height: 0;
 }
+
 .infoItem {
     display: flex;
     align-items: center;
@@ -96,16 +99,19 @@
     display: flex;
     align-items: center;
 }
+
 .cardTextItem {
     display: flex;
     flex-direction: column;
 }
+
 .infoRow {
     display: flex;
     margin-top: 14px;
     gap: 0 25px;
     align-items: center;
 }
+
 .svg {
     width: 16px;
     height: 16px;
@@ -115,20 +121,24 @@
         width: 100%;
     }
 }
+
 .menu {
     margin-top: 40px;
     margin-bottom: 40px;
     padding-left: 40px;
     padding-right: 40px;
 }
+
 .menuServices {
     width: 100%;
 }
+
 .menuServicesHeading {
     font-weight: 700;
     font-size: 20px;
     margin-bottom: 25px;
 }
+
 .menuList {
     width: 100%;
     display: flex;
@@ -136,6 +146,7 @@
     margin-bottom: 15px;
     position: relative;
 }
+
 .menuHeading,
 .menuDistance {
     font-weight: 400;
@@ -145,6 +156,7 @@
     display: inline-flex;
     flex-shrink: 0;
 }
+
 .menuHeading,
 .menuDistance {
     font-weight: 400;
@@ -160,6 +172,7 @@
     border-bottom: 2px dashed #bcc0ca;
     margin: 0 10px;
 }
+
 .about,
 .description,
 .photos {
@@ -168,6 +181,7 @@
     padding-left: 40px;
     padding-right: 40px;
 }
+
 .title {
     font-weight: 700;
     font-size: 20px;
@@ -175,23 +189,27 @@
     line-height: 135%;
     color: var(--titleText);
 }
+
 .map {
     width: 679px;
     height: 157px;
     border-radius: 5px;
     overflow: hidden;
 }
+
 .descriptionSubtitle {
     font-weight: 400;
     font-size: 16px;
     line-height: 23.52px;
     color: var(--simpleText);
 }
+
 .photosContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
 }
+
 .photo {
     width: 32.5%;
 
@@ -205,6 +223,7 @@
         object-fit: cover;
     }
 }
+
 .phoneSection {
     width: 387px;
     background-color: white;
@@ -212,11 +231,13 @@
     display: flex;
     flex-direction: column;
 }
+
 .call {
     font-size: 20px;
     font-weight: 700;
     margin: 24px 72px 24px 40px;
 }
+
 .tell {
     margin: 17px 40px 38px 28px;
     background: rgba(20, 153, 152, 0.2);

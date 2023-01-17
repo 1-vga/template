@@ -1,21 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import styles from './dashboard-admin-row.module.scss';
+import styles from './dashboard-row.module.scss';
 import { Row } from '../../types';
 import classNames from 'classnames';
 import { AppointPopup } from '../../appoint-popup';
+import { UploadPopup } from '../../upload-popup';
 import OutsideClickHandler from 'react-outside-click-handler';
+import { useLocation } from 'react-router-dom';
 
 interface Props {
     data: Row;
     cellWidth: number;
     appointmentId: string;
     setAppointmentId: React.Dispatch<React.SetStateAction<string>>;
+    uploadId: string;
+    setUploadId: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const DashboardAdminRow: React.FC<Props> = ({ data, cellWidth, appointmentId, setAppointmentId }) => {
-    const handleClick = () => {
+const DashboardRow: React.FC<Props> = ({ data, cellWidth, appointmentId, setAppointmentId, uploadId, setUploadId }) => {
+    const locaton = useLocation();
+
+    const handleOpenDetails = () => {
         setAppointmentId(data.id!);
     }
+
+    const handleOpenUpload = (id: string) => {
+        setUploadId(data.id!);
+    }
+
+    const isPatientHistory = locaton.pathname === '/patient-dashboard' && locaton.hash === '#history';
 
     return <div className={styles.profileAppointmentRow}>
         <div style={{ width: `${cellWidth}%` }} className={classNames(styles.cell, styles.patient)}>
@@ -38,14 +50,31 @@ const DashboardAdminRow: React.FC<Props> = ({ data, cellWidth, appointmentId, se
             <div className={styles.text}>{data.status}</div>
         </div>
         <div style={{ width: `${cellWidth}%` }} className={classNames(styles.cell, styles.text, styles.visible)}>
-            <button className={styles.button} onClick={handleClick}>View Details</button>
-            {appointmentId === data.id && <OutsideClickHandler
-                onOutsideClick={() => { setAppointmentId('') }}
+            <button
+                className={classNames(styles.button,
+                    { [styles.smallButton]: isPatientHistory },
+                    { [styles.active]: appointmentId === data.id },
+                )}
+                onClick={isPatientHistory ? () => handleOpenUpload(data.id!) : handleOpenDetails}
             >
-                <AppointPopup />
-            </OutsideClickHandler>}
+                {isPatientHistory ? 'Send' : 'View Details'}
+            </button>
+            {
+                appointmentId === data.id && <OutsideClickHandler
+                    onOutsideClick={() => { setAppointmentId('') }}
+                >
+                    <AppointPopup />
+                </OutsideClickHandler>
+            }
+            {
+                uploadId === data.id &&
+                <UploadPopup
+                    uploadId={data.id}
+                    setUploadId={setUploadId}
+                />
+            }
         </div>
     </div>
 }
 
-export default DashboardAdminRow;
+export default DashboardRow;

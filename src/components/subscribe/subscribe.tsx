@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styles from './subscribe.module.scss';
-
 interface Props {
 
 }

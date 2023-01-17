@@ -100,10 +100,20 @@
     background: transparent;
     font-weight: 600;
     font-size: 10px;
-    line-height: 10px;    
+    line-height: 10px;
     letter-spacing: -0.005em;
     color: #8F9EB5;
     border: 1px solid #EDF2F7;
     border-radius: 4px;
     cursor: pointer;
+
+    &.active {
+        border: 1px solid var(--primary);
+        color: var(--primary);
+    }
+}
+
+.smallButton {
+    width: 57px;
+    height: 26px;
 }

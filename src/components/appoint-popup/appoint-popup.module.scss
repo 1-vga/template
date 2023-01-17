@@ -53,6 +53,14 @@
     gap: 10px;
     text-transform: uppercase;
     font-family: "Open Sans", sans-serif;
+
+    &[data-status='Postponed'] {
+        background: #f7936f;
+    }
+
+    &[data-status='Confirmed'] {
+        background: #1BD2A4;
+    }
 }
 
 .border {
@@ -85,6 +93,15 @@
     color: var(--titleText);
 }
 
+.infoSubtitle {
+    font-weight: 700;
+    font-size: 14.4px;
+    line-height: 116%;
+    color: var(--primary);
+    margin-bottom: 60px;
+    line-height: 28px;
+}
+
 .patientInfo {
     display: flex;
     height: 48px;
@@ -97,6 +114,7 @@
     border-radius: 50%;
     border: 1px solid white;
     margin-right: 16px;
+
     & img {
         width: 100%;
     }
@@ -200,4 +218,3 @@
     font-size: 14px;
     cursor: pointer;
 }
-

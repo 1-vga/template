@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styles from './table.module.scss';
 import { Row, TABLE } from '../types';
-import { ProfileAppointmentRow, ProfileFindingRow, DashboardAdminRow } from '../table-rows';
+import { ProfileAppointmentRow, ProfileFindingRow, DashboardRow } from '../table-rows';
 import classNames from 'classnames';
+import { UploadPopup } from '../upload-popup';
 
 interface Props {
     type: TABLE;
@@ -16,6 +17,7 @@ interface Props {
 const Table: React.FC<Props> = ({ heading, columnTitles, emptyColumns, rows, type, setPopup }) => {
     const cellWidth = 100 / columnTitles.length + (emptyColumns || 0);
     const [appointmentId, setAppointmentId] = useState('');
+    const [uploadId, setUploadId] = useState('');
 
     return <div className={styles.table}>
         {heading && <h1 className={styles.heading}>{heading}</h1>}
@@ -55,12 +57,14 @@ const Table: React.FC<Props> = ({ heading, columnTitles, emptyColumns, rows, typ
             }
             {
                 type === TABLE.DASHBOARD_ADMIN && rows.map((row, i) => {
-                    return <DashboardAdminRow
+                    return <DashboardRow
                         key={i}
                         data={row}
                         cellWidth={cellWidth}
                         appointmentId={appointmentId}
                         setAppointmentId={setAppointmentId}
+                        uploadId={uploadId}
+                        setUploadId={setUploadId}
                     />
                 })
             }

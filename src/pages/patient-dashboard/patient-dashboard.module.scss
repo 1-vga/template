@@ -19,14 +19,6 @@
     background: var(--bg-primary);
 }
 
-.indicationsContainer {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    justify-content: space-between;
-    margin-bottom: 30px;
-}
-
 .row {
     display: flex;
     align-items: center;
@@ -48,11 +40,4 @@
     text-align: right;
     color: var(--primary);
     cursor: pointer;
-}
-
-.appointmentsContainer {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    margin-bottom: 30px;
 }

@@ -13,7 +13,6 @@ import { Table } from '../../components/table';
 import { TABLE } from '../../components/types';
 import { columnsAppointment, rowsAppointment } from '../../moc-data/dataDashboard';
 
-
 interface Props {
 }
 
@@ -54,7 +53,10 @@ const AdminDashboard: React.FC<Props> = () => {
                         title='Staff'
                     />
                 </div>
-                <h2 className={styles.title}>Today’s Appoitnments</h2>
+                <div className={styles.row}>
+                    <h2 className={styles.title}>Today’s Appoitnments</h2>
+                    <div className={styles.rowAction}>Show all</div>
+                </div>
                 <div className={styles.appointmentsContainer}>
                     <AppointmentCard
                         avatar={avatar}
@@ -87,15 +89,15 @@ const AdminDashboard: React.FC<Props> = () => {
                         time='11:00-12:00'
                     />
                 </div>
-                <Table 
+                <Table
                     type={TABLE.DASHBOARD_ADMIN}
                     columnTitles={columnsAppointment}
                     rows={rowsAppointment}
                     heading='New Appointments'
                 />
             </section>
-        </div>
-    </div>
+        </div >
+    </div >
 }
 
 export default AdminDashboard;

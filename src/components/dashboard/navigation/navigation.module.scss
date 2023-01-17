@@ -15,6 +15,18 @@
     &:last-child {
         margin-bottom: 0;
     }
+
+    &.active {
+
+        & .tabText,
+        & .appointmentsText {
+            color: var(--primary);
+        }
+
+        & img {
+            filter: invert(44%) sepia(18%) saturate(7414%) hue-rotate(151deg) brightness(92%) contrast(84%);
+        }
+    }
 }
 
 .tabImage {
