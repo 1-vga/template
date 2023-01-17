@@ -1,8 +1,13 @@
 .popupContainer {
     width: 670px;
     border-radius: 4px;
-    background-color: #ffff;
-    position: relative;
+    background: #ffff;
+    padding-bottom: 40px;
+    position: absolute;
+    top: -180px;
+    left: -665px;
+    box-shadow: 0px 8px 64px rgba(181, 193, 193, 0.5);
+    z-index: 1;
 
     &:before {
         content: "";
@@ -15,7 +20,7 @@
         left: calc(100% - 13px);
         clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
         transform: rotate(225deg);
-        border-radius: 0 0 0 0.25em;
+        border-radius: 0 0 0 0.4em;
     }
 }
 
@@ -34,7 +39,7 @@
     color: var(--titleText);
 }
 
-.postponed {
+.status {
     font-size: 12px;
     font-weight: 700;
     color: #ffff;
@@ -48,6 +53,14 @@
     gap: 10px;
     text-transform: uppercase;
     font-family: "Open Sans", sans-serif;
+
+    &[data-status='Postponed'] {
+        background: #f7936f;
+    }
+
+    &[data-status='Confirmed'] {
+        background: #1BD2A4;
+    }
 }
 
 .border {
@@ -80,6 +93,15 @@
     color: var(--titleText);
 }
 
+.infoSubtitle {
+    font-weight: 700;
+    font-size: 14.4px;
+    line-height: 116%;
+    color: var(--primary);
+    margin-bottom: 60px;
+    line-height: 28px;
+}
+
 .patientInfo {
     display: flex;
     height: 48px;
@@ -92,6 +114,7 @@
     border-radius: 50%;
     border: 1px solid white;
     margin-right: 16px;
+
     & img {
         width: 100%;
     }
@@ -125,9 +148,9 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 40px;
     font-weight: 700;
     font-size: 14px;
+    cursor: pointer;
 }
 
 .patientDateCol {
@@ -180,7 +203,7 @@
     color: var(--simpleText);
 }
 
-.callAppoint {
+.buttonCancel {
     background-color: #f16063;
     width: 283px;
     padding: 17px 72px;
@@ -193,10 +216,5 @@
     gap: 10px;
     font-weight: 600;
     font-size: 14px;
-}
-
-.buttonApp {
-    margin-bottom: 40px;
-    display: flex;
-    justify-content: flex-end;
+    cursor: pointer;
 }

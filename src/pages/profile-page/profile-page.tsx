@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import styles from './profile-page.module.scss';
 import avatar from './images/avatar.png';
 import { Table } from '../../components/table';
-import { rowsAppointment, columnsAppointment, columnsFindings, rowsFindings } from '../../dataProfile';
+import { rowsAppointment, columnsAppointment, columnsFindings, rowsFindings } from '../../moc-data/dataProfile';
 import { TABLE } from '../../components/types';
 import { ResultPopup } from '../../components/result-popup';
-import { PDFDownloadLink } from '@react-pdf/renderer';
 
 interface Props {
 }

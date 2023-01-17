@@ -1,0 +1,43 @@
+.createAppointment {
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFFFFF;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 136.02%;
+    color: var(--darkText);
+}
+
+.button {
+    height: 36px;
+    width: 195px;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.buttonImage {
+    height: 12px;
+    width: 12px;
+    margin-right: 8px;
+
+    & img {
+        width: 100%;
+    }
+}
+
+.buttonText {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 12px;
+    color: #ffffff;
+}
