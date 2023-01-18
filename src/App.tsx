@@ -14,6 +14,8 @@ import { Page404 } from './pages/page404';
 import ScrollToTop from './utils/scroll-to-top';
 import { AdminDashboard } from './pages/admin-dashboard';
 import { PatientDashboard } from './pages/patient-dashboard';
+import { AppointmentsPage } from './pages/appointments-page';
+import { FindingsPage } from './pages/findings-page';
 
 function App() {
   const location = useLocation();
@@ -30,6 +32,8 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path='/profile' element={<ProfilePage />} />
+            <Route path='/appointments' element={<AppointmentsPage />} />
+            <Route path='/findings' element={<FindingsPage />} />
             <Route path='/admin-dashboard' element={<AdminDashboard />} />
             <Route path='/patient-dashboard' element={<PatientDashboard />} />
             <Route path='/about' element={<div style={{ marginTop: '95px' }}>About page</div>} />
