@@ -12,10 +12,16 @@ interface Props {
 const PatientDashboard: React.FC<Props> = () => {
     const location = useLocation();
 
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const handleSideMenu = (state: boolean) => {
+        setMenuOpen(state)
+    }
+
     return <div className={styles.adminDashboard}>
-        <SidePanel />
+        <SidePanel menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <div className={styles.content}>
-            <CreateAppointment />
+            <CreateAppointment handleSideMenu={handleSideMenu} />
             <section className={styles.dataSection}>
                 <div className={styles.row}>
                     {

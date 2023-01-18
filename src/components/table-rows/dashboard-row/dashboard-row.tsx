@@ -63,7 +63,7 @@ const DashboardRow: React.FC<Props> = ({ data, cellWidth, appointmentId, setAppo
                 appointmentId === data.id && <OutsideClickHandler
                     onOutsideClick={() => { setAppointmentId('') }}
                 >
-                    <AppointPopup />
+                    <AppointPopup setAppointmentId={setAppointmentId} />
                 </OutsideClickHandler>
             }
             {
