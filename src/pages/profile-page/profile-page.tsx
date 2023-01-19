@@ -5,12 +5,13 @@ import { Table } from '../../components/table';
 import { rowsAppointment, columnsAppointment, columnsFindings, rowsFindings } from '../../moc-data/dataProfile';
 import { TABLE } from '../../components/types';
 import { ResultPopup } from '../../components/result-popup';
+import { Link } from 'react-router-dom';
 
 interface Props {
 }
 
 const ProfilePage: React.FC<Props> = (props) => {
-    const [popup, setPopup] = useState(false);
+    const [popup, setPopup] = useState(false); //TODO 1)id of the clicked row. 2) fetch data inside popup with id
 
     return <div className={styles.profilePage}>
         <section className={styles.topSection}>
@@ -31,7 +32,7 @@ const ProfilePage: React.FC<Props> = (props) => {
                 columnTitles={columnsAppointment}
                 rows={rowsAppointment}
             />
-            <button className={styles.button}>See all</button>
+            <Link to='/appointments' className={styles.button}>See all</Link>
         </div>
         <div className={styles.tableContainer}>
             <h2 className={styles.heading}>History</h2>
@@ -40,7 +41,7 @@ const ProfilePage: React.FC<Props> = (props) => {
                 columnTitles={columnsAppointment}
                 rows={rowsAppointment}
             />
-            <button className={styles.button}>See all</button>
+            <Link to='/appointments' className={styles.button}>See all</Link>
         </div>
         <div className={styles.tableContainer}>
             <h2 className={styles.heading}>Medical findings</h2>
@@ -50,9 +51,9 @@ const ProfilePage: React.FC<Props> = (props) => {
                 rows={rowsFindings}
                 setPopup={setPopup}
             />
-            <button className={styles.button}>See all</button>
+            <Link to='/findings' className={styles.button}>See all</Link>
         </div>
-        { popup && <ResultPopup setPopup={setPopup}/>}
+        {popup && <ResultPopup setPopup={setPopup} />}
     </div>
 }
 
