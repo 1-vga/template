@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './header.module.scss';
-import logo from './images/logo.svg';
-import whiteLogo from './images/whiteLogo.svg';
+import logo from './images/logo.png';
+import whiteLogo from './images/logo.png';
 import { NavLink, useLocation, Link } from "react-router-dom";
 import { SignedBlock } from '../signed-block';
 import classNames from 'classnames';

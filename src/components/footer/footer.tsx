@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './footer.module.scss';
-import logo from './images/logo.svg';
+import logo from './images/logo.png';
 import { Link } from "react-router-dom";
 
 interface Props {
