@@ -15,6 +15,7 @@ import { Carousel } from '../../components/carousel';
 import { Map } from '../../components/map';
 import { useNavigate, useParams } from "react-router-dom";
 import { Breadcrumbs } from '../../components/breadcrumbs';
+import classNames from 'classnames';
 
 interface Props {
 
@@ -37,7 +38,7 @@ const LabPage: React.FC<Props> = () => {
     }, [])
 
     return <div className={styles.labPage}>
-        <Carousel />
+        {/* <Carousel /> */}
         <div className={styles.cotentContainer}>
             <section className={styles.content}>
                 <Breadcrumbs />
@@ -54,22 +55,22 @@ const LabPage: React.FC<Props> = () => {
                         <div className={styles.cardTextItem}>
                             <div className={styles.infoItem}>
                                 <div className={styles.svg}>
-                                    <img className={styles.svg} src={svgLocation} alt="location" />
+                                    <img src={svgLocation} alt="location" />
                                 </div>
-                                <div className={styles.infoText}>Azize Šaćirbegović 16, Sarajevo 71000, Bosnia & Herzegovina</div>
+                                <span className={styles.infoText}>Azize Šaćirbegović 16, Sarajevo 71000, Bosnia & Herzegovina</span>
                             </div>
                             <div className={styles.infoRow}>
                                 <div className={styles.infoItem}>
                                     <div className={styles.svg}>
-                                        <img className={styles.svg} src={svgTime} alt="time" />
+                                        <img src={svgTime} alt="time" />
                                     </div>
                                     <div className={styles.infoText}>Mon-Sun: 10:00 - 18:00</div>
                                 </div>
                                 <a className={styles.infoItem} href="tel: 88005553535">
                                     <div className={styles.svg}>
-                                        <img className={styles.svg} src={svgTell} alt="tell" />
+                                        <img src={svgTell} alt="tell" />
                                     </div>
-                                    <div className={styles.infoText}>+387 33 725 900</div>
+                                    <div className={classNames(styles.infoText, styles.mobile)}>+387 33 725 900</div>
                                 </a>
                                 <a className={styles.infoItem} href="https://www.google.com" target='_blank'>
                                     <div className={styles.svg}>

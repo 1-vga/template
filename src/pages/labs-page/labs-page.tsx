@@ -16,6 +16,7 @@ interface Props {
 
 const LabsPage: React.FC<Props> = (props) => {
     const [currentPage, setCurrentPage] = useState(1);
+    const [openFilters, setOpenFilters] = useState(false);
 
     useEffect(() => {
         localStorage.setItem(PREV_PATH, 'Labs');
@@ -26,9 +27,15 @@ const LabsPage: React.FC<Props> = (props) => {
             <Search title='labs' />
         </section>
         <section id='section-labs' className={styles.sectionBottom}>
-            <Filters />
+            <Filters openFilters={openFilters} setOpenFilters={setOpenFilters} />
             <div className={styles.bottomContent}>
-                <h2 className={styles.title}>Search results <span>(all)</span></h2>
+                <div className={styles.actionBox}>
+                    <button className={styles.filters} onClick={() => setOpenFilters(true)}>
+                        Filters
+                    </button>
+                    <h2 className={styles.title}>Search results <span>(all)</span></h2>
+                </div>
+
                 <div className={styles.cards}>
                     <CardLab id='1' photo={photo} name='EUROFARM' location='Ozrakovići bb' time='Mon-Sun: 10:00 - 18:00' tell='+387 32 732 100' website='eurofarm.ba' />
                     <CardLab id='2' photo={photoTwo} name='BOSANES' location='Ozrakovići bb' time='Mon-Sun: 10:00 - 18:00' tell='+387 32 732 100' website='eurofarm.ba' />

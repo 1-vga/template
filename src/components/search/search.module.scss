@@ -5,10 +5,19 @@
     top: 42%;
     left: 50%;
     transform: translateX(-50%);
+    padding: 0 36px;
     z-index: 2;
 
     &.labsPageTop {
         top: 35%;
+    }
+
+    @media(max-width: 890px) {
+        max-width: 562px;
+    }
+
+    @media(max-width: 700px) {
+        max-width: 462px;
     }
 }
 
@@ -25,6 +34,16 @@
     &.labsPageMargin {
         margin-bottom: 40px;
     }
+
+    @media(max-width: 890px) {
+        font-size: 48px;
+        margin-bottom: 48px;
+    }
+
+    @media(max-width: 700px) {
+        font-size: 36px;
+        margin-bottom: 36px;
+    }
 }
 
 
@@ -36,6 +55,14 @@
     padding: 4px 4px 4px 40px;
     border-radius: 48px;
     background: var(--bg-input);
+
+    @media(max-width: 890px) {
+        padding: 4px 4px 4px 30px;
+    }
+
+    @media(max-width: 700px) {
+        padding: 2px 2px 2px 15px;
+    }
 }
 
 .inputField {
@@ -52,6 +79,15 @@
         line-height: 147%;
         color: var(--dimmedText);
     }
+
+    @media(max-width: 700px) {
+        font-size: 14px;
+
+        &::placeholder {
+            font-size: 14px;
+            line-height: 127%;
+        }
+    }
 }
 
 .submitButton {
@@ -66,4 +102,13 @@
     background: var(--primary);
     border-radius: 48px;
     cursor: pointer;
+
+    @media(max-width: 890px) {
+        width: 110px;
+        height: 39px;
+    }
+
+    @media(max-width: 700px) {
+        width: 100px;
+    }
 }

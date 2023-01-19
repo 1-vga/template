@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import styles from './header.module.scss';
 import logo from './images/logo.svg';
 import whiteLogo from './images/whiteLogo.svg';
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, Link } from "react-router-dom";
 import { SignedBlock } from '../signed-block';
 import classNames from 'classnames';
 import isScrolledIntoView from '../../utils/isElementIntoView';
@@ -45,9 +45,9 @@ const Header: React.FC<Props> = (props) => {
 
     return <header ref={headerRef} className={classNames(styles.header, { [styles.transparent]: isTransparent })}>
         <div className={styles.content}>
-            <div className={styles.logoContainer}>
+            <Link to='/' className={styles.logoContainer}>
                 <img src={isTransparent ? whiteLogo : logo} alt="logo" />
-            </div>
+            </Link>
             <nav className={styles.pages}>
                 <NavLink to="/" className={({ isActive }) => isActive ? styles.activePage : styles.page}>
                     Home

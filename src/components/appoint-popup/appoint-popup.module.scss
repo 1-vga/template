@@ -1,3 +1,31 @@
+.wrapper {
+    width: 100%;
+    z-index: 11;
+
+    @media(max-width: 900px) {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+
+.backdrop {
+    display: none;
+
+    @media(max-width: 900px) {
+        display: block;
+        background: rgba(0, 0, 0, 0.45);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 11;
+    }
+}
+
 .popupContainer {
     width: 670px;
     border-radius: 4px;
@@ -22,6 +50,22 @@
         transform: rotate(225deg);
         border-radius: 0 0 0 0.4em;
     }
+
+    @media(max-width: 900px) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 12;
+
+        &::before {
+            display: none;
+        }
+    }
+
+    @media(max-width: 700px) {
+        width: 90%;
+        padding-bottom: 16px;
+    }
 }
 
 .titleBox {
@@ -29,6 +73,14 @@
     justify-content: space-between;
     margin: 25px 0;
     padding: 0 40px;
+
+    @media(max-width: 700px) {
+        margin: 16px 0;
+    }
+
+    @media(max-width: 500px) {
+        padding: 0 16px;
+    }
 }
 
 .title {
@@ -37,6 +89,10 @@
     line-height: 27px;
     letter-spacing: 0.01em;
     color: var(--titleText);
+
+    @media(max-width: 500px) {
+        font-size: 16px;
+    }
 }
 
 .status {
@@ -70,16 +126,43 @@
 
 .infoBox {
     padding: 0 40px;
+
+    @media(max-width: 700px) {
+        padding: 0 16px;
+    }
 }
 
 .row {
     display: flex;
+    align-items: center;
+
+    @media(max-width: 700px) {
+        justify-content: space-between;
+        align-items: stretch;
+    }
+
+    @media(max-width: 500px) {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .column {
     width: 50%;
     display: flex;
     flex-direction: column;
+
+    @media(max-width: 700px) {
+        width: 49%;
+    }
+
+    @media(max-width: 500px) {
+        width: 100%;
+
+        &:first-child {
+            margin-bottom: 24px;
+        }
+    }
 }
 
 .infotitle {
@@ -106,6 +189,10 @@
     display: flex;
     height: 48px;
     margin-bottom: 40px;
+
+    @media(max-width: 500px) {
+        margin-bottom: 16px;
+    }
 }
 
 .photoImg {
@@ -117,6 +204,10 @@
 
     & img {
         width: 100%;
+    }
+
+    @media(max-width: 600px) {
+        margin-right: 8px;
     }
 }
 
@@ -137,7 +228,7 @@
     color: var(--primary);
 }
 
-.callPatient {
+.buttonCall {
     background-color: var(--primary);
     width: 283px;
     padding: 16px 77px;
@@ -156,6 +247,12 @@
 .patientDateCol {
     display: flex;
     margin-bottom: 60px;
+
+    @media(max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 16px;
+    }
 }
 
 .dateInfo {
@@ -170,6 +267,12 @@
 
     &:first-child {
         margin-right: 24px;
+    }
+
+    @media(max-width: 600px) {
+        &:first-child {
+            margin-bottom: 16px;
+        }
     }
 }
 
@@ -187,12 +290,6 @@
     & img {
         width: 100%;
     }
-}
-
-.dateCol50 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .calendarTitle {
@@ -217,4 +314,11 @@
     font-weight: 600;
     font-size: 14px;
     cursor: pointer;
+}
+
+.buttonCall,
+.buttonCancel {
+    @media(max-width: 700px) {
+        width: 100%;
+    }
 }

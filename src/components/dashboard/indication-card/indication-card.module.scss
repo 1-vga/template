@@ -9,6 +9,25 @@
     flex-grow: 1;
     box-shadow: 0px 3px 8px -1px rgba(50, 50, 71, 0.05);
     filter: drop-shadow(0px 0px 1px rgba(12, 26, 75, 0.24));
+
+    @media(max-width: 1300px) {
+        min-width: 255px;
+    }
+
+    @media(max-width: 1100px) {
+        padding: 27px 8px;
+        min-width: unset;
+    }
+
+    @media(max-width: 1070px) {
+        padding: 27px 24px;
+        max-width: unset;
+        width: 45%;
+    }
+
+    @media(max-width: 480px) {
+        padding: 8px;
+    }
 }
 
 .imageContainer {
