@@ -13,7 +13,7 @@
     background: transparent;
 
     & .logoContainer {
-        max-width: 208px;
+        max-width: 40px;
     }
 
     & .page {
@@ -22,7 +22,7 @@
 
     @media(max-width: 700px) {
         & .logoContainer {
-            max-width: 120px;
+            max-width: 25px;
         }
     }
 }
@@ -39,14 +39,14 @@
 
 .logoContainer {
     width: 100%;
-    max-width: 177px;
+    max-width: 40px;
 
     & img {
         width: 100%;
     }
 
     @media(max-width: 700px) {
-        max-width: 120px;
+        max-width: 25px;
     }
 }
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './side-panel.module.scss';
-import logoIcon from '../images/logo.svg';
+import logoIcon from '../images/logo.png';
 import { Navigation } from '../navigation';
 import profileIcon from '../images/profile.svg';
 import logIcon from '../images/log.svg';
